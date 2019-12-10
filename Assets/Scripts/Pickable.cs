@@ -5,19 +5,23 @@ using UnityEngine.Events;
 
 public class Pickable : MonoBehaviour
 {
-	private Material _highlightMaterial;
+	protected Material Material;
 	private float _highlightDecaySpeed = 2f;
 	private float _currentHighlightIntensity = 0f;
 
 	public float OutlineWidth = 0.01f;
-	public UnityEvent OnPickUp;
+
+	[HideInInspector]
+	public string ItemName;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
 		var renderer = GetComponent<Renderer>();
-		_highlightMaterial = new Material(renderer.material);
-		renderer.material = _highlightMaterial;
+		Material = new Material(renderer.material);
+		Material.shader = Shader.Find("Outlined/Silhouetted Diffuse");
+		Material.SetColor("_OutlineColor", Color.yellow);
+		renderer.material = Material;
     }
 
 	public void Highlight()
@@ -26,18 +30,18 @@ public class Pickable : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	protected virtual void Update()
 	{
-		_highlightMaterial.SetFloat("_Outline", _currentHighlightIntensity * OutlineWidth);
+		Debug.Log(_currentHighlightIntensity);
+		Material.SetFloat("_Outline", _currentHighlightIntensity * OutlineWidth);
 		if (_currentHighlightIntensity > 0)
 			_currentHighlightIntensity -= _highlightDecaySpeed * Time.deltaTime;
 		else
 			_currentHighlightIntensity = 0f;
 	}
 
-	public void PickUp()
+	public virtual void PickUp()
 	{
-		OnPickUp.Invoke();
-		gameObject.SetActive(false);
+
 	}
 }

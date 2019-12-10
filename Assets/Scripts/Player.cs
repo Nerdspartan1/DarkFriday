@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 	public float FrequencyFactor;
 	private float _timeBeforeNextStep = 0f;
 
+	public Clothing CarriedClothing;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,9 @@ public class Player : MonoBehaviour
 		
 		if (Physics.Raycast(ray, out RaycastHit hit, MaxInteractDistance) && hit.collider.CompareTag("Interactable"))
 		{
-			PickUpText.gameObject.SetActive(true);
 			var pickable = hit.collider.GetComponent<Pickable>();
+			PickUpText.gameObject.SetActive(true);
+			PickUpText.text = $"Press E to pick up {pickable.ItemName}";
 			pickable.Highlight();
 			if (Input.GetKeyDown(KeyCode.E))
 			{
