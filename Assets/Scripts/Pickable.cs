@@ -17,6 +17,7 @@ public class Pickable : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+		tag = "Interactable";
 		var renderer = GetComponent<Renderer>();
 		Material = new Material(renderer.material);
 		Material.shader = Shader.Find("Outlined/Silhouetted Diffuse");
