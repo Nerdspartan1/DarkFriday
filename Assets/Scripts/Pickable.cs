@@ -32,7 +32,6 @@ public class Pickable : MonoBehaviour
 	// Update is called once per frame
 	protected virtual void Update()
 	{
-		Debug.Log(_currentHighlightIntensity);
 		Material.SetFloat("_Outline", _currentHighlightIntensity * OutlineWidth);
 		if (_currentHighlightIntensity > 0)
 			_currentHighlightIntensity -= _highlightDecaySpeed * Time.deltaTime;
@@ -42,6 +41,5 @@ public class Pickable : MonoBehaviour
 
 	public virtual void PickUp()
 	{
-
 	}
 }

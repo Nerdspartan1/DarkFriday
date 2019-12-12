@@ -16,7 +16,7 @@ public class Clothing : Pickable
 		get => Material.color;
 		set
 		{
-			Material.color = value;
+			Material.SetColor("_Color", value);
 			UpdateName();
 		}
 	}
@@ -26,34 +26,14 @@ public class Clothing : Pickable
 	protected override void Start()
 	{
 		base.Start();
-		UpdateName();
+		var col = ColorManager.Instance.GetRandomColor(ClothingType);
+		Debug.Log(col);
+		Color = col;
 	}
 
 	public void UpdateName()
 	{
-		ItemName = ColorName(Material.color) + ClothingName(ClothingType);
-	}
-
-	public static string ColorName(Color color)
-	{
-		if (color == Color.red)
-			return "red";
-		else if (color == Color.blue)
-			return "blue";
-		else if (color == Color.green)
-			return "green";
-		else if (color == Color.yellow)
-			return "yellow";
-		else if (color == Color.magenta)
-			return "magenta";
-		else if (color == Color.cyan)
-			return "cyan";
-		else if (color == Color.black)
-			return "black";
-		else if (color == Color.white)
-			return "white";
-		else
-			return "";
+		ItemName = ColorManager.ColorName(Material.color) + " " + ClothingName(ClothingType);
 	}
 
 	public static string ClothingName(ClothingType type)
