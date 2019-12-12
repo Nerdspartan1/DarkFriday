@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 1}
+  m_AmbientSkyColor: {r: 0.011764706, g: 0.011764706, b: 0.011764706, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -10986,6 +10986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMov: event:/Player/Movement
+  playerFS: event:/Player/Footsteps
   aiMov: event:/AI/Movement
   aiExpressions: event:/AI/Expressions
   mannequin: 
@@ -53222,7 +53223,8 @@ MonoBehaviour:
   FPSCamera: {fileID: 0}
   PickUpText: {fileID: 1263328366}
   MaxInteractDistance: 2
-  CarriedClothing: {fileID: 0}
+  MinSpeed: 0.1
+  FrequencyFactor: 1
 --- !u!114 &990046575276413325
 MonoBehaviour:
   m_ObjectHideFlags: 0

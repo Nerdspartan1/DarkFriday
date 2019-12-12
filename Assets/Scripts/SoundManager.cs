@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     [Header ("Player")]
     [FMODUnity.EventRef]
     public string playerMov;
+    [FMODUnity.EventRef]
+    public string playerFS;
 
     [Header("AI")]
     [FMODUnity.EventRef]
