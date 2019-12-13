@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
         menuEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.menu);
         menuEvent.start();
-        
+
 
     }
 
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 		musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
 		musicEvent.start();
-        
+
 	}
 
     void Update()
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("StartEnemyCooldown", cooldownTime);
     }
-    
+
     public IEnumerator StartEnemyCooldown(float cooldownTime)
     {
         // Give some time to walk away;
