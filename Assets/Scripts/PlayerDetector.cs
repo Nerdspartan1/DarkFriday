@@ -55,6 +55,7 @@ public class PlayerDetector : MonoBehaviour
         {
             Debug.Log("not hidden");
         }
+        EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
     }
 
     private void OnTriggerEnter(Collider other)
