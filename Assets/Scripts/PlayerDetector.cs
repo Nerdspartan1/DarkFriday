@@ -6,6 +6,8 @@ public class PlayerDetector : MonoBehaviour
 {
     public EnemyAI EnemyAI;
     public KeyCode hidingKey;
+    public GameObject EnemyEyes;
+    public GameObject PlayerEyes;
     
     private bool playerInRange = false;
     private bool playerMoved = false;
@@ -31,14 +33,16 @@ public class PlayerDetector : MonoBehaviour
 
         hiding = Input.GetKey(hidingKey);
 
-        EnemyAI.playerDetected = false;
-        if (playerInRange && PlayerInLineOfSight())
+        // Player can only hide when not in line of sight & out of range and cannot be detected when hiding
+        if (EnemyAI.playerHiding)
         {
-            if(mouseMoved || playerMoved || !hiding)
-            {
-                EnemyAI.playerDetected = true;
-            }
+            EnemyAI.playerDetected = false;
         }
+        else
+        {
+            EnemyAI.playerDetected = playerInRange && PlayerInLineOfSight();
+        }
+        EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,8 +63,8 @@ public class PlayerDetector : MonoBehaviour
 
     private bool PlayerInLineOfSight()
     {
-        Vector3 start = EnemyAI.gameObject.transform.position;
-        Vector3 target = EnemyAI.Player.gameObject.transform.position;
+        Vector3 start = EnemyEyes.gameObject.transform.position;
+        Vector3 target = PlayerEyes.gameObject.transform.position;
         Vector3 direction = target - start;
 
         float distance = (start - target).magnitude;

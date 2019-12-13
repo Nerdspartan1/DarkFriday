@@ -142,6 +142,7 @@ public class vp_FPController : vp_CharacterController
 			m_Trigger.transform.parent = m_Transform;
 			m_Trigger.layer = vp_Layer.LocalPlayer;
 			m_Trigger.transform.localPosition = Vector3.zero;
+            m_Trigger.tag = "Player";
 
 			m_TriggerCollider = m_Trigger.AddComponent<CapsuleCollider>();
 			m_TriggerCollider.isTrigger = true;

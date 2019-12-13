@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator StartEnemyCooldown(float cooldownTime)
     {
-        // TODO Maybe add a dissappear effect or let the enemy walk away first
-        
+        // Give some time to walk away;
+        yield return new WaitForSeconds(5);
         Enemy.SetActive(false);
         yield return new WaitForSeconds(cooldownTime);
         ActivateEnemy();
@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour
     private void ActivateEnemy()
     {
         Enemy.SetActive(true);
-        Enemy.GetComponent<EnemyAI>().SetRandomPosition();
+        Enemy.GetComponent<EnemyAI>().Respawn();
     }
 }

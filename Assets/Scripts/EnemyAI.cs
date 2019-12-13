@@ -37,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     public float MinSearchWaitTime = 0f;
     public float MaxSearchWaitTime = 1f;
     public float SearchDuration = 3f;
+    public float AggressiveSearchDuration = 6f;
 
     // Detection parameters
     public float DetectionRange = 10f;
@@ -55,7 +56,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent navAgent;
     private bool waiting;
     public bool playerDetected;
-    private bool playerWasDetected;
+    public bool playerHiding; 
     private bool agressiveMode = false;
     
     public EnemyState currentState;
@@ -63,7 +64,6 @@ public class EnemyAI : MonoBehaviour
     private float currentChaseDelay;
     private float currentChaseDuration;
     private float currentSearchDuration;
-    private float currentCooldownDuration;
 
     private float currentMinWaitTime;
     private float currentMaxWaitTime;
@@ -77,20 +77,21 @@ public class EnemyAI : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
         SetState(EnemyState.Patroul);
+        transform.position = MostDistantSpawn();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check agression level
-        agressiveMode = GameManager.numberOfItemsPlaced >= 5;
-        
-        // StateCheck
+        UpdateAgressionLevel();
+
+        // StateCheck Section
         switch (currentState)
         {
             case EnemyState.Patroul:
             case EnemyState.AggressivePatroul:
-                if (playerDetected)
+                if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
                 }
@@ -98,7 +99,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Cooldown:
                 break;
             case EnemyState.Search:
-                if (playerDetected)
+                if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
                 }
@@ -113,7 +114,8 @@ public class EnemyAI : MonoBehaviour
                 }
                 break;
             case EnemyState.Chase:
-                // If player is undetected for a while, stop chasing
+                // If player is undetected, don´t touch him, and after a while, stop chasing
+
                 if (playerDetected)
                 {
                     ResetChaseDuration();
@@ -121,24 +123,15 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     currentChaseDuration -= Time.deltaTime;
-                    if (currentChaseDuration <= 0)
+                    if (currentChaseDuration <= 0 || DistanceToPlayer(transform.position) <= 3)
                     {
-                        if (agressiveMode)
-                        {
-                            SetState(EnemyState.Search);
-                        }
-                        else
-                        {
-                            SetState(EnemyState.Cooldown);
-                        }
+                        SetState(EnemyState.Search);
                     }
                 }
                 break;
-            default:
-                break;
         }
 
-        // Movement
+        // Movement Section
         currentOrigin = Player.transform.position;
 
         switch (currentState)
@@ -159,14 +152,14 @@ public class EnemyAI : MonoBehaviour
                 }
 
                 break;
-            case EnemyState.Search:              
+            case EnemyState.Search:
                 if (DoMovement())
                 {
                     StartCoroutine("SetNewPatroulTarget", Random.Range(MinSearchWaitTime, MaxSearchWaitTime));
                 }
                 break;
             case EnemyState.Chase:
-                
+
                 // Wait before actually chasing the player
                 if (currentChaseDelay > 0)
                 {
@@ -183,6 +176,21 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    // Checks if the aggression level has to be changed
+    private void UpdateAgressionLevel()
+    {
+        agressiveMode = GameManager.numberOfItemsPlaced >= 5;
+        if (agressiveMode && currentState == EnemyState.Patroul)
+        {
+            SetState(EnemyState.AggressivePatroul);
+        }
+        else if (!agressiveMode && currentState == EnemyState.AggressivePatroul)
+        {
+            SetState(EnemyState.Patroul);
+        }
+    }
+
+    // Change state of the enemy, adjust variables, etc.
     private void SetState(EnemyState state)
     {
         currentState = state;
@@ -204,15 +212,8 @@ public class EnemyAI : MonoBehaviour
                 currentMaxDistance = MaxAggressivePatroulDistance;
                 break;
             case EnemyState.Cooldown:
-                if (agressiveMode)
-                {
-                    state = EnemyState.AggressivePatroul;
-                }
-                else
-                {
-                    state = EnemyState.Patroul;
-                }
-                GameManager.StartEnemyCooldown(CoolDownDuration);
+                navAgent.SetDestination(MostDistantSpawn());
+                GameManager.EnemyCooldown(CoolDownDuration);
                 return;
             case EnemyState.Search:
                 navAgent.speed = ChaseSpeed;
@@ -220,9 +221,14 @@ public class EnemyAI : MonoBehaviour
                 currentMaxWaitTime = MaxSearchWaitTime;
                 currentMinDistance = MinSearchDistance;
                 currentMaxDistance = MaxSearchDistance;
-                
+                ResetSearchDuration();
                 break;
             case EnemyState.Chase:
+                if (waiting)
+                {
+                    StopCoroutine("SetNewPatroulTarget");
+                    waiting = false;
+                }
                 navAgent.speed = ChaseSpeed;
                 currentMinDistance = 0f;
                 currentMaxDistance = 0.1f;
@@ -231,12 +237,13 @@ public class EnemyAI : MonoBehaviour
                 // add chase delay because chaseduration will be counted even if chase is delayed
                 currentChaseDuration += ChaseDelay;
 
-                // TODO Play aggro sound
+                // TODO Play aggro sound?
 
                 break;
         }
     }
 
+    // Sets correct chase duration
     private void ResetChaseDuration()
     {
         // Chase duration depends on aggressive level
@@ -251,6 +258,22 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Sets correct search duration
+    private void ResetSearchDuration()
+    {
+        // Search duration depends on aggressive level
+
+        if (agressiveMode)
+        {
+            currentSearchDuration = AggressiveSearchDuration;
+        }
+        else
+        {
+            currentSearchDuration = SearchDuration;
+        }
+    }
+
+    // Checks if a new movement destination is needed
     private bool DoMovement()
     {
         if (currentState == EnemyState.Chase && !waiting)
@@ -267,6 +290,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Find a valid target
     private static Vector3 GetNewTarget(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -276,6 +300,7 @@ public class EnemyAI : MonoBehaviour
         return navHit.position;
     }
 
+    // Coroutine for all movements
     private IEnumerator SetNewPatroulTarget(float waitTime)
     {
         waiting = true;
@@ -284,22 +309,41 @@ public class EnemyAI : MonoBehaviour
         navAgent.SetDestination(GetNewTarget(currentOrigin, Random.Range(currentMinDistance, currentMaxDistance), -1));
     }
 
-    public void SetRandomPosition()
+    // Find the spawnpoint which is most away from the player and return the position
+    private Vector3 MostDistantSpawn()
     {
         float currentDistance = 0f;
         foreach (var spawnPoint in SpawnPoints)
         {
-            if ((spawnPoint.transform.position - Player.transform.position).magnitude > currentDistance)
+            var distance = DistanceToPlayer(spawnPoint.transform.position);
+            if (distance > currentDistance)
             {
                 mostDistantPosition = spawnPoint.transform.position;
+                currentDistance = distance;
             }
         }
-        transform.position = mostDistantPosition;
+        return mostDistantPosition;
     }
 
+    // Returns the distance to the player
+    public float DistanceToPlayer(Vector3 position)
+    {
+        var distance = (position - Player.transform.position).magnitude;
+        return distance;
+    }
+
+    // Respawns enemy and sets correct patroul state
+    public void Respawn()
+    {
+        transform.position = MostDistantSpawn();
+        SetState(EnemyState.Patroul);
+        UpdateAgressionLevel();
+    }
+
+    // Kill the player
     private void OnTriggerEnter(Collider other)
     {
-        if (playerDetected && other.gameObject.CompareTag("Player"))
+        if (!playerHiding && other.gameObject.CompareTag("Player"))
         {
             Debug.Log("You are dead now...");
         }
