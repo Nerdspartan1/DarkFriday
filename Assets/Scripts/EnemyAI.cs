@@ -59,7 +59,6 @@ public class EnemyAI : MonoBehaviour
     private float currentChaseDelay;
     private float currentChaseDuration;
     private float currentSearchDuration;
-    private float currentCooldownDuration;
 
     private float currentMinWaitTime;
     private float currentMaxWaitTime;
@@ -91,7 +90,7 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyState.Patroul:
             case EnemyState.AggressivePatroul:
-                if (playerDetected)
+                if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
                     FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
@@ -100,7 +99,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Cooldown:
                 break;
             case EnemyState.Search:
-                if (playerDetected)
+                if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
                     FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);

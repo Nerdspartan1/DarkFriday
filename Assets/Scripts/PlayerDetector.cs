@@ -45,6 +45,19 @@ public class PlayerDetector : MonoBehaviour
         EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
     }
 
+    public void PlayerHiddenSound()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("Hide and breath");
+        }
+        else if (Input.GetKeyUp("space"))
+        {
+            Debug.Log("not hidden");
+        }
+        EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
