@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
 	public float FootstepsFrequencyFactor;
 	private float _timeBeforeNextStep = 0f;
 	private bool _hasFlashlight = false;
-	[SerializeField]
 	private Light _flashlight;
 
 	public Clothing CarriedClothing;
@@ -56,6 +55,9 @@ public class Player : MonoBehaviour
 			PickUpText.gameObject.SetActive(false);
 		}
 
+		if (_hasFlashlight && Input.GetKeyDown(KeyCode.F)) ToggleFlashlight();
+
+
 		/*if (_controller.velocity.magnitude >= 0.01f)
 		{
 			FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerFS);
@@ -87,6 +89,20 @@ public class Player : MonoBehaviour
 	{
 		_hasFlashlight = true;
 		_flashlight.enabled = true;
+		//sound : pick up flashlight
 	}
 
+	public void ToggleFlashlight()
+	{
+		if (_flashlight.enabled)
+		{
+			_flashlight.enabled = false;
+			//sound : turn off flashlight
+		}
+		else
+		{
+			_flashlight.enabled = true;
+			//sound : turn on flashlight
+		}
+	}
 }
