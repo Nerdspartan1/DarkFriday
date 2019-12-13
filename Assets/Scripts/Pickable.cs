@@ -11,6 +11,8 @@ public class Pickable : MonoBehaviour
 
 	public float OutlineWidth = 0.01f;
 
+	public UnityEvent OnPickUp;
+
 	[HideInInspector]
 	public string ItemName;
 
@@ -42,5 +44,6 @@ public class Pickable : MonoBehaviour
 
 	public virtual void PickUp()
 	{
+		OnPickUp.Invoke();
 	}
 }
