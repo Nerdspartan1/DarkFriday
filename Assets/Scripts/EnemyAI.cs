@@ -45,20 +45,21 @@ public class EnemyAI : MonoBehaviour
 
     public float NormalSpeed = 3.5f;
     public float ChaseSpeed = 6f;
-    
+
     private GameObject _player;
-    
+
     private NavMeshAgent navAgent;
     private bool waiting;
     public bool playerDetected;
-    public bool playerHiding; 
+    public bool playerHiding;
     private bool agressiveMode = false;
-    
+
     public EnemyState currentState;
 
     private float currentChaseDelay;
     private float currentChaseDuration;
     private float currentSearchDuration;
+    private float currentCooldownDuration;
 
     private float currentMinWaitTime;
     private float currentMaxWaitTime;
@@ -90,7 +91,7 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyState.Patroul:
             case EnemyState.AggressivePatroul:
-                if (playerDetected && !playerHiding)
+                if (playerDetected)
                 {
                     SetState(EnemyState.Chase);
                     FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
@@ -99,7 +100,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Cooldown:
                 break;
             case EnemyState.Search:
-                if (playerDetected && !playerHiding)
+                if (playerDetected)
                 {
                     SetState(EnemyState.Chase);
                     FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
@@ -200,7 +201,7 @@ public class EnemyAI : MonoBehaviour
     private void SetState(EnemyState state)
     {
         currentState = state;
-        
+
         switch (state)
         {
             case EnemyState.Patroul:
@@ -253,7 +254,7 @@ public class EnemyAI : MonoBehaviour
     private void ResetChaseDuration()
     {
         // Chase duration depends on aggressive level
-        
+
         if (agressiveMode)
         {
             currentChaseDuration = AggressiveChaseDuration;

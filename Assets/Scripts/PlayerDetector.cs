@@ -8,7 +8,7 @@ public class PlayerDetector : MonoBehaviour
     public KeyCode hidingKey;
     public GameObject EnemyEyes;
     public GameObject PlayerEyes;
-    
+
     private bool playerInRange = false;
     private bool playerMoved = false;
     private bool mouseMoved = false;
@@ -16,7 +16,7 @@ public class PlayerDetector : MonoBehaviour
 
     private Vector3 lastMousePos;
     private Vector3 lastPlayerPos;
-    
+
     void Start()
     {
         lastPlayerPos = GameManager.Instance.Player.transform.position;
