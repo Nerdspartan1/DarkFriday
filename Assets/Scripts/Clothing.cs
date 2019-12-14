@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum ClothingType
 {
-	Top,
-	Jacket,
-	Pants,
-	Shoes
+	Top=0,
+	Jacket=1,
+	Pants=2,
+	Shoes=3
 }
 
 public class Clothing : Pickable

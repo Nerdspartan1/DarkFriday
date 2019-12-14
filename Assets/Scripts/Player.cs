@@ -39,8 +39,9 @@ public class Player : MonoBehaviour
     void Update()
     {
 		Ray ray = new Ray(FPSCamera.transform.position, FPSCamera.transform.forward);
-		
-		if (Physics.Raycast(ray, out RaycastHit hit, MaxInteractDistance) && hit.collider.CompareTag("Interactable"))
+
+		if (NoteManager.Instance.NoteReader.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) NoteManager.Instance.StopReadingNote();
+		else if (!NoteManager.Instance.NoteReader.activeInHierarchy && Physics.Raycast(ray, out RaycastHit hit, MaxInteractDistance) && hit.collider.CompareTag("Interactable"))
 		{
 			var pickable = hit.collider.GetComponent<Pickable>();
 			PickUpText.gameObject.SetActive(true);

@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 7145557}
   - component: {fileID: 7145556}
   - component: {fileID: 7145555}
+  - component: {fileID: 7145558}
   m_Layer: 0
   m_Name: Possible Note Location (4)
   m_TagString: Untagged
@@ -237,13 +238,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7145553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.17, y: 1.39, z: 10.505}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 12.704, y: 1.294, z: 10.542}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &7145555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -303,6 +304,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7145553}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7145558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &12504194
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +536,7 @@ GameObject:
   - component: {fileID: 13535379}
   - component: {fileID: 13535378}
   - component: {fileID: 13535377}
+  - component: {fileID: 13535380}
   m_Layer: 0
   m_Name: Possible Note Location (1)
   m_TagString: Untagged
@@ -531,13 +551,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13535375}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.666, y: 0, z: -7.105}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -3.44, y: 0.004, z: -7.105}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &13535377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -568,7 +588,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -597,6 +617,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13535375}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &13535380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13535375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &19866480
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +647,7 @@ GameObject:
   - component: {fileID: 19866484}
   - component: {fileID: 19866483}
   - component: {fileID: 19866482}
+  - component: {fileID: 19866485}
   m_Layer: 0
   m_Name: Possible Note Location (13)
   m_TagString: Untagged
@@ -624,8 +663,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19866480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.39, y: 1.69, z: 15.02}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 28.517, y: 1.69, z: 15.02}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 13
@@ -660,7 +699,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -689,6 +728,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19866480}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &19866485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19866480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &28245570
 GameObject:
   m_ObjectHideFlags: 0
@@ -7118,6 +7175,7 @@ GameObject:
   - component: {fileID: 211734614}
   - component: {fileID: 211734613}
   - component: {fileID: 211734612}
+  - component: {fileID: 211734615}
   m_Layer: 0
   m_Name: Possible Note Location (8)
   m_TagString: Untagged
@@ -7133,8 +7191,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211734610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.39, y: 1.69, z: 10.5}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 35.311, y: 1.69, z: 10.5}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 8
@@ -7169,7 +7227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7198,6 +7256,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211734610}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &211734615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211734610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &220465932
 GameObject:
   m_ObjectHideFlags: 0
@@ -16472,6 +16548,7 @@ GameObject:
   - component: {fileID: 536666163}
   - component: {fileID: 536666162}
   - component: {fileID: 536666161}
+  - component: {fileID: 536666164}
   m_Layer: 0
   m_Name: Possible Note Location (11)
   m_TagString: Untagged
@@ -16487,8 +16564,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536666159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.04, y: 1.69, z: -10.96}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 35.9, y: 1.69, z: -10.624}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 11
@@ -16523,7 +16600,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16552,6 +16629,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536666159}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &536666164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536666159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &546104812
 GameObject:
   m_ObjectHideFlags: 0
@@ -26832,6 +26927,7 @@ GameObject:
   - component: {fileID: 801213624}
   - component: {fileID: 801213623}
   - component: {fileID: 801213622}
+  - component: {fileID: 801213625}
   m_Layer: 0
   m_Name: Possible Note Location (2)
   m_TagString: Untagged
@@ -26846,13 +26942,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801213620}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.557, y: 1.432, z: -6.759}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 15.635, y: 1.31, z: -7.245}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &801213622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26883,7 +26979,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26912,6 +27008,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801213620}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &801213625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801213620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &805537051
 GameObject:
   m_ObjectHideFlags: 0
@@ -27107,6 +27221,7 @@ GameObject:
   - component: {fileID: 826340938}
   - component: {fileID: 826340937}
   - component: {fileID: 826340936}
+  - component: {fileID: 826340939}
   m_Layer: 0
   m_Name: Possible Note Location (3)
   m_TagString: Untagged
@@ -27121,13 +27236,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826340934}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.119, y: 1.39, z: 10.505}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 15.596, y: 1.291, z: 10.455}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &826340936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27158,7 +27273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27187,6 +27302,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826340934}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &826340939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826340934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &830539100
 GameObject:
   m_ObjectHideFlags: 0
@@ -27891,6 +28024,7 @@ GameObject:
   - component: {fileID: 851552881}
   - component: {fileID: 851552880}
   - component: {fileID: 851552879}
+  - component: {fileID: 851552882}
   m_Layer: 0
   m_Name: Possible Note Location (12)
   m_TagString: Untagged
@@ -27906,8 +28040,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851552877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.603, y: 1.69, z: 14.205}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 42.74, y: 1.69, z: 14.205}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 12
@@ -27942,7 +28076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27971,6 +28105,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851552877}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &851552882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851552877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &852792674
 GameObject:
   m_ObjectHideFlags: 0
@@ -36963,6 +37115,7 @@ GameObject:
   - component: {fileID: 1167078801}
   - component: {fileID: 1167078800}
   - component: {fileID: 1167078799}
+  - component: {fileID: 1167078802}
   m_Layer: 0
   m_Name: Possible Note Location (10)
   m_TagString: Untagged
@@ -36977,13 +37130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167078797}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.51, y: 1.69, z: 20.857}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 5.51, y: 1.69, z: 20.709}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1167078799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37014,7 +37167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37043,6 +37196,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167078797}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1167078802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167078797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1175976731
 GameObject:
   m_ObjectHideFlags: 0
@@ -38405,6 +38576,7 @@ GameObject:
   - component: {fileID: 1208083329}
   - component: {fileID: 1208083328}
   - component: {fileID: 1208083327}
+  - component: {fileID: 1208083330}
   m_Layer: 0
   m_Name: Possible Note Location (5)
   m_TagString: Untagged
@@ -38419,13 +38591,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208083325}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.864, y: 2.137, z: 13.598}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -8.864, y: 1.973, z: 13.362}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1208083327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38456,7 +38628,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38485,6 +38657,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208083325}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1208083330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208083325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1211206612
 GameObject:
   m_ObjectHideFlags: 0
@@ -41679,6 +41869,7 @@ GameObject:
   - component: {fileID: 1423892974}
   - component: {fileID: 1423892973}
   - component: {fileID: 1423892972}
+  - component: {fileID: 1423892975}
   m_Layer: 0
   m_Name: Season Note
   m_TagString: Untagged
@@ -41693,13 +41884,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423892970}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.7, y: 0.13, z: 31.04}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: -0.17247844, y: -0.1724785, z: 0.68574864, w: 0.68574864}
+  m_LocalPosition: {x: 8.7, y: 0.008, z: 31.04}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 229480775}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -28.236002, z: 90.00001}
 --- !u!65 &1423892972
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41759,6 +41950,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423892970}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1423892975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423892970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: 
 --- !u!43 &1432196655
 Mesh:
   m_ObjectHideFlags: 0
@@ -42117,6 +42326,7 @@ GameObject:
   - component: {fileID: 1441093464}
   - component: {fileID: 1441093463}
   - component: {fileID: 1441093462}
+  - component: {fileID: 1441093465}
   m_Layer: 0
   m_Name: Possible Note Location
   m_TagString: Untagged
@@ -42131,13 +42341,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441093460}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.268, y: 1.476, z: 19.449}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -11.946, y: 1.476, z: 19.434}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1441093462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42168,7 +42378,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42197,6 +42407,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441093460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1441093465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441093460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1441115077
 GameObject:
   m_ObjectHideFlags: 0
@@ -43268,6 +43496,7 @@ GameObject:
   - component: {fileID: 1484601649}
   - component: {fileID: 1484601648}
   - component: {fileID: 1484601647}
+  - component: {fileID: 1484601650}
   m_Layer: 0
   m_Name: Possible Note Location (6)
   m_TagString: Untagged
@@ -43282,13 +43511,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484601645}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.62, y: 1.4, z: -6.7}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 12.62, y: 1.285, z: -7.289}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &1484601647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43319,7 +43548,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43348,6 +43577,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484601645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1484601650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484601645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1488000598
 GameObject:
   m_ObjectHideFlags: 0
@@ -43862,6 +44109,7 @@ GameObject:
   - component: {fileID: 1503235998}
   - component: {fileID: 1503235997}
   - component: {fileID: 1503235996}
+  - component: {fileID: 1503235999}
   m_Layer: 0
   m_Name: Possible Note Location (9)
   m_TagString: Untagged
@@ -43877,8 +44125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503235994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.24, y: 1.69, z: 31.9}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 30.14, y: 1.69, z: 31.593}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 9
@@ -43913,7 +44161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43942,6 +44190,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503235994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1503235999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503235994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1524102942
 GameObject:
   m_ObjectHideFlags: 0
@@ -46184,6 +46450,7 @@ GameObject:
   - component: {fileID: 1598324950}
   - component: {fileID: 1598324949}
   - component: {fileID: 1598324948}
+  - component: {fileID: 1598324951}
   m_Layer: 0
   m_Name: Possible Note Location (7)
   m_TagString: Untagged
@@ -46199,8 +46466,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598324946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.57, y: 1.69, z: -6.7}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalPosition: {x: 31.628, y: 1.69, z: -6.7}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 7
@@ -46235,7 +46502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46264,6 +46531,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598324946}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1598324951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598324946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1598722281
 GameObject:
   m_ObjectHideFlags: 0
@@ -54187,6 +54472,7 @@ GameObject:
   - component: {fileID: 1860946634}
   - component: {fileID: 1860946633}
   - component: {fileID: 1860946632}
+  - component: {fileID: 1860946635}
   m_Layer: 0
   m_Name: Possible Note Location (14)
   m_TagString: Untagged
@@ -54201,13 +54487,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860946630}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.059, y: 1.69, z: 26.732}
-  m_LocalScale: {x: 0.28306615, y: 0.2105487, z: 0.30644724}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -2.059, y: 1.291, z: 27.557}
+  m_LocalScale: {x: 0.01, y: 0.3, z: 0.21}
   m_Children: []
   m_Father: {fileID: 1118058329}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &1860946632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54238,7 +54524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d90c3ebbcadfa84c9b975802b6c3683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -54267,6 +54553,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860946630}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1860946635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860946630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d9dcb2d762ca64c94a975a35f34ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineWidth: 0.01
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemName: 
+  Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1861238957
 GameObject:
   m_ObjectHideFlags: 0
@@ -55327,8 +55631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoteReader: {fileID: 86038173}
   NoteText: {fileID: 1728551376}
-  NoteSpawnLocations: {fileID: 0}
-  NotePrefab: {fileID: 0}
+  Notes: {fileID: 1118058329}
+  SeasonNote: {fileID: 1423892975}
 --- !u!1 &1909998745
 GameObject:
   m_ObjectHideFlags: 0

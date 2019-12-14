@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class NoteManager : MonoBehaviour
 {
@@ -10,10 +11,8 @@ public class NoteManager : MonoBehaviour
 	[Header("References")]
 	public GameObject NoteReader;
 	public Text NoteText;
-	public Transform NoteSpawnLocations;
-	public GameObject NotePrefab;
-
-	private Transform[] _noteSpawnPoints;
+	public Transform Notes;
+	public Note SeasonNote;
 
 	private void Awake()
 	{
@@ -23,28 +22,34 @@ public class NoteManager : MonoBehaviour
 	private void Start()
 	{
 		NoteReader.SetActive(false);
-		//_noteSpawnPoints = new Transform[NoteSpawnLocations.childCount];
-		//for(int i=0; i < _noteSpawnPoints.Length; ++i)
-		//{
-		//	_noteSpawnPoints[i] = NoteSpawnLocations.GetChild(i);
-		//}
+		PlaceColorNotes();
+		SeasonNote.SetSeasonText(ColorManager.Instance.CurrentSeason);
 	}
 
 	public void PlaceColorNotes()
 	{
-		List<int> _alreadyPlaced = new List<int>();
-		
+		List<Note> possibleNotes = Notes.GetComponentsInChildren<Note>().ToList();
+		possibleNotes.RandomizeList();
+		int noteId=0;
+		foreach(var note in possibleNotes)
+		{
+			if(noteId < 4)
+			{
+				note.gameObject.SetActive(true);
+				note.SetClothingType((ClothingType)noteId++);
+			}
+			else
+			{
+				note.gameObject.SetActive(false);
+			}
+
+		}
 	}
 
 	public void ReadNote(Note note)
 	{
 		NoteReader.SetActive(true);
 		NoteText.text = note.Text;
-	}
-
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.E)) StopReadingNote();
 	}
 
 	public void StopReadingNote()
