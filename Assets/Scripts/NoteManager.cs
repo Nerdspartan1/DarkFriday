@@ -7,10 +7,13 @@ public class NoteManager : MonoBehaviour
 {
 	public static NoteManager Instance;
 
+	[Header("References")]
 	public GameObject NoteReader;
 	public Text NoteText;
+	public Transform NoteSpawnLocations;
+	public GameObject NotePrefab;
 
-	public GameObject[] NoteSpawnLocations;
+	private Transform[] _noteSpawnPoints;
 
 	private void Awake()
 	{
@@ -20,6 +23,17 @@ public class NoteManager : MonoBehaviour
 	private void Start()
 	{
 		NoteReader.SetActive(false);
+		//_noteSpawnPoints = new Transform[NoteSpawnLocations.childCount];
+		//for(int i=0; i < _noteSpawnPoints.Length; ++i)
+		//{
+		//	_noteSpawnPoints[i] = NoteSpawnLocations.GetChild(i);
+		//}
+	}
+
+	public void PlaceColorNotes()
+	{
+		List<int> _alreadyPlaced = new List<int>();
+		
 	}
 
 	public void ReadNote(Note note)

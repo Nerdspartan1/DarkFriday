@@ -23,17 +23,16 @@ public class Clothing : Pickable
 
 	public ClothingType ClothingType;
 
-	protected override void Start()
-	{
-		base.Start();
-		var col = ColorManager.Instance.GetRandomColor(ClothingType);
-		Debug.Log(col);
-		Color = col;
-	}
-
 	public void UpdateName()
 	{
 		ItemName = ColorManager.ColorName(Material.color) + " " + ClothingName(ClothingType);
+	}
+
+	public override void PickUp()
+	{
+		GameManager.Instance.Player.GetComponent<Player>().TakeClothing(this);
+
+		base.PickUp();
 	}
 
 	public static string ClothingName(ClothingType type)

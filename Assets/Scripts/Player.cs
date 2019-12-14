@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 	[Header("References")]
 	public Text PickUpText;
 	public GameObject FlashlightObject;
+	public Text CarriedClothingText;
 	private CharacterController _controller;
 	private vp_PlayerInventory _inventory;
 
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
 	private bool _hasFlashlight = false;
 	private Light _flashlight;
 
-	public Clothing CarriedClothing;
+	private Clothing _carriedClothing;
 
     void Start()
     {
@@ -90,6 +91,30 @@ public class Player : MonoBehaviour
 		_hasFlashlight = true;
 		_flashlight.enabled = true;
 		//sound : pick up flashlight
+	}
+
+	public void TakeClothing(Clothing clothing)
+	{
+		if (_carriedClothing != null)
+		{
+			_carriedClothing.transform.SetPositionAndRotation(clothing.transform.position, clothing.transform.rotation);
+			_carriedClothing.gameObject.SetActive(true);
+		}
+		clothing.gameObject.SetActive(false);
+		_carriedClothing = clothing;
+
+		if (_carriedClothing)
+		{
+			CarriedClothingText.text = _carriedClothing.ItemName;
+			CarriedClothingText.color = _carriedClothing.Color;
+			if (CarriedClothingText.color == Color.black) CarriedClothingText.color = Color.gray;
+		}
+		else
+		{
+			CarriedClothingText.text = "nothing";
+			CarriedClothingText.color = Color.white;
+		}
+		//sound : take clothing
 	}
 
 	public void ToggleFlashlight()

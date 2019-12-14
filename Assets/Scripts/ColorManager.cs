@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum Season
 {
@@ -14,12 +15,16 @@ public class ColorManager : MonoBehaviour
 {
 	public static ColorManager Instance;
 
+	public Transform Clothings;
+
 	public Color[] WinterColors;
 	public Color[] SpringColors;
 	public Color[] SummerColors;
 	public Color[] AutumnColors;
 
 	public int MinimumAmountOfCorrectClothes = 1;
+
+	public Dictionary<ClothingType, Color> CorrectColor = new Dictionary<ClothingType, Color>();
 
 	public Dictionary<ClothingType, int> AmountOfCorrectClothings = new Dictionary<ClothingType, int>(){
 		{ClothingType.Jacket,0 },
@@ -34,31 +39,61 @@ public class ColorManager : MonoBehaviour
 	{
 		Instance = this;
 		CurrentSeason = (Season)Random.Range(0, 3);
+		CorrectColor.Add(ClothingType.Jacket, GetRandomSeasonColor(CurrentSeason));
+		CorrectColor.Add(ClothingType.Top, GetRandomSeasonColor(CurrentSeason));
+		CorrectColor.Add(ClothingType.Pants, GetRandomSeasonColor(CurrentSeason));
+		CorrectColor.Add(ClothingType.Shoes, GetRandomSeasonColor(CurrentSeason));
 	}
 
-
-	public Color GetRandomColor(ClothingType clothingType)
+	public void Start()
 	{
-		Season season;
-		if (AmountOfCorrectClothings[clothingType] < MinimumAmountOfCorrectClothes)
-			season = CurrentSeason;
-		else
-			season = (Season)Random.Range(0, 3);
+		PlaceColoredClothes();
+	}
 
-		if(season == CurrentSeason) AmountOfCorrectClothings[clothingType]++;
-
+	public Color[] GetSeasonColors(Season season)
+	{
 		switch (season)
 		{
 			case Season.Winter:
-				return WinterColors[Random.Range(0, WinterColors.Length)];
+				return WinterColors;
 			case Season.Spring:
-				return SpringColors[Random.Range(0, SpringColors.Length)];
+				return SpringColors;
 			case Season.Summer:
-				return SummerColors[Random.Range(0, SummerColors.Length)];
+				return SummerColors;
 			case Season.Autumn:
-				return AutumnColors[Random.Range(0, AutumnColors.Length)];
+				return AutumnColors;
 			default:
 				throw new System.Exception("Unknown season");
+		}
+	}
+
+	public Color GetRandomSeasonColor(Season season)
+	{
+		var colors = GetSeasonColors(season);
+		return colors[Random.Range(0, colors.Length)];
+	}
+
+	public Color GetRandomColor()
+	{
+		var season = (Season)Random.Range(0, 3);
+		return GetRandomSeasonColor(season);
+	}
+
+	public void PlaceColoredClothes()
+	{
+		List<Clothing> clothings = Clothings.GetComponentsInChildren<Clothing>().ToList();
+		clothings.RandomizeList();
+		foreach(var clothing in clothings)
+		{
+			if(AmountOfCorrectClothings[clothing.ClothingType] < MinimumAmountOfCorrectClothes)
+			{
+				clothing.Color = CorrectColor[clothing.ClothingType];
+				AmountOfCorrectClothings[clothing.ClothingType]++;
+			}
+			else
+			{
+				clothing.Color = GetRandomColor();
+			}
 		}
 	}
 
