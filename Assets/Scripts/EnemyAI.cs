@@ -22,27 +22,22 @@ public class EnemyAI : MonoBehaviour
     public float MaxPatroulDistance = 30f;
     public float MinWaitTime = 1f;
     public float MaxWaitTime = 5f;
-    public float ChaseDuration = 2f;
+    public float ChaseDuration = 10f;
 
     // Movement parameters to use when the player has 5 or more items. AI patroul-targets are set in proximity of the player
-    public float MinAggressivePatroulDistance = 8f;
-    public float MaxAggressivePatroulDistance = 20f;
+    public float MinAggressivePatroulDistance = 10f;
+    public float MaxAggressivePatroulDistance = 35f;
     public float MinAggressivePatroulWaitTime = 1f;
     public float MaxAggressivePatroulWaitTime = 3f;
-    public float AggressiveChaseDuration = 4f;
+    public float AggressiveChaseDuration = 15f;
 
     // Searching Parameters are used when the player has aggroed the enemy
-    public float MinSearchDistance = 2f;
-    public float MaxSearchDistance = 4f;
+    public float MinSearchDistance = 4f;
+    public float MaxSearchDistance = 8f;
     public float MinSearchWaitTime = 0f;
     public float MaxSearchWaitTime = 1f;
-    public float SearchDuration = 3f;
-    public float AggressiveSearchDuration = 6f;
-
-    // Detection parameters
-    public float DetectionRange = 10f;
-    public float FlashlightDetectionRange = 25f;
-    public float DetectionAngle = 90f;
+    public float SearchDuration = 10f;
+    public float AggressiveSearchDuration = 15f;
 
     public float ChaseDelay = 1.5f;
     public float CoolDownDuration= 10f;
