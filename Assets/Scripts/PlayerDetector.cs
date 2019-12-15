@@ -9,10 +9,16 @@ public class PlayerDetector : MonoBehaviour
     public GameObject EnemyEyes;
     public GameObject PlayerEyes;
 
+    public float UndetectDelay = 1.5f;
+
     private bool playerInRange = false;
     private bool playerMoved = false;
     private bool mouseMoved = false;
     private bool hiding = false;
+
+    private bool canHide = false;
+    private bool wasHiding = false;
+    public float currentUndetectDelay;
 
     private Vector3 lastMousePos;
     private Vector3 lastPlayerPos;
@@ -33,16 +39,43 @@ public class PlayerDetector : MonoBehaviour
 
         hiding = Input.GetKey(hidingKey);
 
-        // Player can only hide when not in line of sight & out of range and cannot be detected when hiding
+        // Check if hiding is possible
+
+
+        EnemyAI.playerDetected = playerInRange && PlayerInLineOfSight();
+
+        if (EnemyAI.playerDetected)
+        {
+            currentUndetectDelay = UndetectDelay;
+        }
+
+        if (currentUndetectDelay > 0)
+        {
+            EnemyAI.playerDetected = true;
+            currentUndetectDelay -= Time.deltaTime;
+            if (currentUndetectDelay < 0)
+            {
+                currentUndetectDelay = 0;
+            }
+        }
+
+        if (!EnemyAI.playerDetected || wasHiding)
+        {
+            canHide = true;
+        }
+        else
+        {
+            canHide = false;
+        }
+
+        EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && canHide;
+
         if (EnemyAI.playerHiding)
         {
             EnemyAI.playerDetected = false;
         }
-        else
-        {
-            EnemyAI.playerDetected = playerInRange && PlayerInLineOfSight();
-        }
-        EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
+
+        wasHiding = EnemyAI.playerHiding;
     }
 
     public void PlayerHiddenSound()
