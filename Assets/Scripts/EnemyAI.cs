@@ -45,8 +45,7 @@ public class EnemyAI : MonoBehaviour
     public float NormalSpeed = 3.5f;
     public float ChaseSpeed = 6f;
     
-    public GameObject Player;
-    public GameManager GameManager;
+    private GameObject _player;
     
     private NavMeshAgent navAgent;
     private bool waiting;
@@ -70,6 +69,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+		_player = GameManager.Instance.Player;
         navAgent = GetComponent<NavMeshAgent>();
         SetState(EnemyState.Patroul);
         transform.position = MostDistantSpawn();
@@ -127,7 +127,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         // Movement Section
-        currentOrigin = Player.transform.position;
+        currentOrigin = _player.transform.position;
 
         switch (currentState)
         {
@@ -174,7 +174,7 @@ public class EnemyAI : MonoBehaviour
     // Checks if the aggression level has to be changed
     private void UpdateAgressionLevel()
     {
-        agressiveMode = GameManager.numberOfItemsPlaced >= 5;
+        agressiveMode = GameManager.Instance.numberOfItemsPlaced >= 5;
         if (agressiveMode && currentState == EnemyState.Patroul)
         {
             SetState(EnemyState.AggressivePatroul);
@@ -208,7 +208,7 @@ public class EnemyAI : MonoBehaviour
                 break;
             case EnemyState.Cooldown:
                 navAgent.SetDestination(MostDistantSpawn());
-                GameManager.EnemyCooldown(CoolDownDuration);
+                GameManager.Instance.EnemyCooldown(CoolDownDuration);
                 return;
             case EnemyState.Search:
                 navAgent.speed = ChaseSpeed;
@@ -323,7 +323,7 @@ public class EnemyAI : MonoBehaviour
     // Returns the distance to the player
     public float DistanceToPlayer(Vector3 position)
     {
-        var distance = (position - Player.transform.position).magnitude;
+        var distance = (position - _player.transform.position).magnitude;
         return distance;
     }
 

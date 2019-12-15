@@ -19,7 +19,7 @@ public class PlayerDetector : MonoBehaviour
     
     void Start()
     {
-        lastPlayerPos = EnemyAI.Player.gameObject.transform.position;
+        lastPlayerPos = GameManager.Instance.Player.transform.position;
         lastMousePos = Input.mousePosition;
     }
 
@@ -28,8 +28,8 @@ public class PlayerDetector : MonoBehaviour
         mouseMoved = Input.mousePosition != lastMousePos;
         lastMousePos = Input.mousePosition;
 
-        playerMoved = EnemyAI.Player.transform.position != lastPlayerPos;
-        lastPlayerPos = EnemyAI.Player.gameObject.transform.position;
+        playerMoved = GameManager.Instance.Player.transform.position != lastPlayerPos;
+        lastPlayerPos = GameManager.Instance.Player.transform.position;
 
         hiding = Input.GetKey(hidingKey);
 
