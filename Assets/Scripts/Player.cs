@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 	public float MinFootstepSpeed = 2f;
 	public float FootstepsFrequencyFactor;
 	private float _timeBeforeNextStep = 0f;
-	private bool _hasFlashlight = false;
+	public bool HasFlashlight = false;
 	private Light _flashlight;
 
 	private Clothing _carriedClothing;
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 			PickUpText.gameObject.SetActive(false);
 		}
 
-		if (_hasFlashlight && Input.GetKeyDown(KeyCode.F)) ToggleFlashlight();
+		if (HasFlashlight && Input.GetKeyDown(KeyCode.F)) ToggleFlashlight();
 
 
 		/*if (_controller.velocity.magnitude >= 0.01f)
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
 
 	public void GiveFlashlight()
 	{
-		_hasFlashlight = true;
+		HasFlashlight = true;
 		_flashlight.enabled = true;
 		//sound : pick up flashlight
 	}

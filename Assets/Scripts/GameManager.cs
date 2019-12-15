@@ -12,7 +12,13 @@ public class GameManager : MonoBehaviour
 	public GameObject Player;
     public GameObject Enemy;
 
-    public int numberOfItemsPlaced;
+	public Transform Phase1Lighting;
+	public Transform Phase2Lighting;
+
+	public GameObject PickableFlashlight1;
+	public GameObject PickableFlashlight2;
+
+	public int numberOfItemsPlaced;
 
     FMOD.Studio.EventInstance menuEvent;
 
@@ -41,9 +47,6 @@ public class GameManager : MonoBehaviour
 		Game.SetActive(true);
 		Player.SetActive(true);
         menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-        // TODO Activate Enemy in Part 1
-        ActivateEnemy();
         
 	}
 
@@ -62,6 +65,20 @@ public class GameManager : MonoBehaviour
 
 	}
 
+	public void StartPhase2()
+	{
+		Phase1Lighting.gameObject.SetActive(false);
+		Phase2Lighting.gameObject.SetActive(true);
+		Enemy.SetActive(true);
+		Enemy.GetComponent<EnemyAI>().Respawn();
+
+		if (!Player.GetComponent<Player>().HasFlashlight)
+		{
+			PickableFlashlight1.SetActive(false);
+			PickableFlashlight2.SetActive(true);
+		}
+	}
+
     public void EnemyCooldown(float cooldownTime)
     {
         StartCoroutine("StartEnemyCooldown", cooldownTime);
@@ -73,12 +90,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         Enemy.SetActive(false);
         yield return new WaitForSeconds(cooldownTime);
-        ActivateEnemy();
-    }
-
-    private void ActivateEnemy()
-    {
-        Enemy.SetActive(true);
-        Enemy.GetComponent<EnemyAI>().Respawn();
-    }
+		Enemy.SetActive(true);
+		Enemy.GetComponent<EnemyAI>().Respawn();
+	}
 }
