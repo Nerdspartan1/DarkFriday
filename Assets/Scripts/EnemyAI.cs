@@ -185,7 +185,7 @@ public class EnemyAI : MonoBehaviour
     // Checks if the aggression level has to be changed
     private void UpdateAgressionLevel()
     {
-        aggressiveMode = GameManager.Instance.numberOfItemsPlaced >= 5;
+        aggressiveMode = GameManager.Instance.numberOfItemsPlaced >= 3;
         if (aggressiveMode && currentState == EnemyState.Patrol)
         {
             SetState(EnemyState.AggressivePatrol);
