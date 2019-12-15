@@ -67,6 +67,8 @@ public class Mannequin : Pickable
 		_material[(int)clothing.ClothingType].color = clothing.Color;
 		Renderers[(int)clothing.ClothingType].gameObject.SetActive(true);
 
+		GameManager.Instance.numberOfItemsPlaced++;
+
 		bool fullyDressed = true;
 		foreach (bool b in _hasClothing)
 			fullyDressed &= b;
