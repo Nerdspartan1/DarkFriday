@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 		Menu.SetActive(false);
 		Game.SetActive(true);
 		Player.SetActive(true);
-        menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menuEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 		musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
 		musicEvent.start();
         
@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        musicEvent.setParameterByName("Items", numberOfItemsPlaced);
-        Debug.Log(numberOfItemsPlaced);
+        //musicEvent.setParameterByName("Items", numberOfItemsPlaced);
+        //Debug.Log(numberOfItemsPlaced);
     }
 
 	public void QuitGame()
@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
 		Enemy.SetActive(false);
 		GameOverScreen.SetActive(true);
 		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerDeath);
+		musicEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		musicEvent.release();
 	}
 
 	public void RestartGame()
@@ -84,6 +86,11 @@ public class GameManager : MonoBehaviour
 
 	}
 
+	public void TransitiontoPhase2()
+	{
+		musicEvent.setParameterByName("TRX Part 2", 1f);
+	}
+
 	public void StartPhase2()
 	{
 		Phase1Lighting.gameObject.SetActive(false);
@@ -92,6 +99,9 @@ public class GameManager : MonoBehaviour
 		Enemy.GetComponent<EnemyAI>().Respawn();
 
 		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
+
+		musicEvent.setParameterByName("TRX Part 2", 0f);
+
 
 		if (!Player.GetComponent<Player>().HasFlashlight)
 		{
