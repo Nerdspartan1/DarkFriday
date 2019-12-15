@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        musicEvent.setParameterByName("Items", numberOfItemsPlaced);
-        Debug.Log(numberOfItemsPlaced);
+        //musicEvent.setParameterByName("Items", numberOfItemsPlaced);
+        //Debug.Log(numberOfItemsPlaced);
     }
 
 	public void QuitGame()
@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
 		Enemy.SetActive(false);
 		GameOverScreen.SetActive(true);
 		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerDeath);
+		musicEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		musicEvent.release();
 	}
 
 	public void RestartGame()
@@ -84,6 +86,12 @@ public class GameManager : MonoBehaviour
 
 	}
 
+	public void TransitiontoPhase2()
+	{
+		musicEvent.setParameterByName("TRX Part 2", 1f);
+		Debug.Log("TRX PART 2");
+	}
+
 	public void StartPhase2()
 	{
 		Phase1Lighting.gameObject.SetActive(false);
@@ -92,6 +100,10 @@ public class GameManager : MonoBehaviour
 		Enemy.GetComponent<EnemyAI>().Respawn();
 
 		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
+
+		musicEvent.setParameterByName("TRX Part 2", 0f);
+		Debug.Log("TRX PART 2 stop");
+
 
 		if (!Player.GetComponent<Player>().HasFlashlight)
 		{
