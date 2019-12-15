@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int numberOfItemsPlaced;
 
     FMOD.Studio.EventInstance menuEvent;
+    public FMOD.Studio.EventInstance musicEvent;
 
 	public void Awake()
 	{
@@ -42,10 +43,18 @@ public class GameManager : MonoBehaviour
 		Player.SetActive(true);
         menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
+        musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
+        musicEvent.start();
         // TODO Activate Enemy in Part 1
         ActivateEnemy();
         
 	}
+
+    void Update()
+    {
+        musicEvent.setParameterByName("Items", numberOfItemsPlaced);
+        Debug.Log(numberOfItemsPlaced);
+    }
 
 	public void QuitGame()
 	{

@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public List<GameObject> SpawnPoints;
+    //public static EnemyAI Instance;
 
     // Normal patroul parameters
     public float MinPatroulDistance = 5f;
