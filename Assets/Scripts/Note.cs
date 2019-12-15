@@ -18,6 +18,7 @@ public class Note : Pickable
 	public override void PickUp()
 	{
 		NoteManager.Instance.ReadNote(this);
+		base.PickUp();
 	}
 
 	public void StopReading()

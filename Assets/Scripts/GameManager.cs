@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 		Menu.SetActive(false);
 		Game.SetActive(true);
 		Player.SetActive(true);
-        menuEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 		musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
 		musicEvent.start();
         
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
 	public void TransitiontoPhase2()
 	{
 		musicEvent.setParameterByName("TRX Part 2", 1f);
+		Debug.Log("TRX PART 2");
 	}
 
 	public void StartPhase2()
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
 		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
 
 		musicEvent.setParameterByName("TRX Part 2", 0f);
+		Debug.Log("TRX PART 2 stop");
 
 
 		if (!Player.GetComponent<Player>().HasFlashlight)
