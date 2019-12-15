@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
 
 		UpdateCarryingText();
 
-		//sound : take clothing
+		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.pickCloth);
 	}
 
 	public void RemoveClothingFromInventory()
@@ -150,12 +150,12 @@ public class Player : MonoBehaviour
 		if (_flashlight.enabled)
 		{
 			_flashlight.enabled = false;
-			//sound : turn off flashlight
+			FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.flashlightButton);
 		}
 		else
 		{
 			_flashlight.enabled = true;
-			//sound : turn on flashlight
+			FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.flashlightButton);
 		}
 	}
 }

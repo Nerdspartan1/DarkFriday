@@ -8,7 +8,7 @@ public class ColorRandomizer : MonoBehaviour
 
 	private Material[] _materials;
 	
-	void Start()
+	void Awake()
     {
 		_materials = new Material[Renderers.Length];
 		//reference and clone materials

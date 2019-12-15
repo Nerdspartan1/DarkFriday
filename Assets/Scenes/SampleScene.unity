@@ -13607,16 +13607,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMov: event:/Player/Movement
   playerFS: event:/Player/Footsteps
-  playerDeath: 
-  playerHide: 
+  playerDeath: event:/Player/Death
+  playerHide: event:/Player/Hiding
   aiMov: event:/AI/Movement
   aiExpressions: event:/AI/Expressions
   mannequin: event:/Triggers/Mannequin
-  pickCloth: 
-  pickNote: 
-  flashlightButton: 
+  pickCloth: event:/UI/Pick Cloth
+  pickNote: event:/UI/Pick Note
+  flashlightButton: event:/UI/Flashlight Button
   music: event:/Soundtrack/Music
-  menu: 
+  menu: event:/Soundtrack/Menu
 --- !u!1 &455833207
 GameObject:
   m_ObjectHideFlags: 0
@@ -63614,7 +63614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ItemRecords:
     itemList: 87
-    helpbox: 108
+    helpbox: 128
   m_ItemCaps:
     itemList: 0
     helpbox: 0
@@ -63794,6 +63794,10 @@ MonoBehaviour:
   - TypeName: vp_FPInput
     Name: Zoom
     TextAsset: {fileID: 4900000, guid: ba6cdc7550b18e74c982f46929f38c56, type: 3}
+    StatesToBlock: 
+  - TypeName: vp_FPInput
+    Name: Freeze
+    TextAsset: {fileID: 4900000, guid: ea5c2b15f265e2e4e9d0821dd9dc0f69, type: 3}
     StatesToBlock: 
   - TypeName: vp_FPInput
     Name: Default
