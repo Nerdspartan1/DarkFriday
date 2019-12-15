@@ -8,8 +8,8 @@ public class EnemyAI : MonoBehaviour
 {
     public enum EnemyState
     {
-        Patroul,
-        AggressivePatroul,
+        Patrol,
+        AggressivePatrol,
         Cooldown,
         Search,
         Chase
@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     public float MinSearchDistance = 4f;
     public float MaxSearchDistance = 8f;
     public float MinSearchWaitTime = 0f;
-    public float MaxSearchWaitTime = 1f;
+    public float MaxSearchWaitTime = 0.3f;
     public float SearchDuration = 10f;
     public float AggressiveSearchDuration = 15f;
 
@@ -52,7 +52,7 @@ public class EnemyAI : MonoBehaviour
     private bool waiting;
     public bool playerDetected;
     public bool playerHiding;
-    private bool agressiveMode = false;
+    private bool aggressiveMode = false;
 
     public EnemyState currentState;
 
@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
 		_anim = GetComponent<Animator>();
 		_player = GameManager.Instance.Player;
         navAgent = GetComponent<NavMeshAgent>();
-        SetState(EnemyState.Patroul);
+        SetState(EnemyState.Patrol);
         transform.position = MostDistantSpawn();
     }
 
@@ -88,8 +88,8 @@ public class EnemyAI : MonoBehaviour
         // StateCheck Section
         switch (currentState)
         {
-            case EnemyState.Patroul:
-            case EnemyState.AggressivePatroul:
+            case EnemyState.Patrol:
+            case EnemyState.AggressivePatrol:
                 if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
@@ -135,7 +135,7 @@ public class EnemyAI : MonoBehaviour
 
         switch (currentState)
         {
-            case EnemyState.Patroul:
+            case EnemyState.Patrol:
                 if (DoMovement())
                 {
                     currentOrigin = transform.position;
@@ -144,7 +144,7 @@ public class EnemyAI : MonoBehaviour
                 break;
             case EnemyState.Cooldown:
                 break;
-            case EnemyState.AggressivePatroul:
+            case EnemyState.AggressivePatrol:
                 if (DoMovement())
                 {
                     StartCoroutine("SetNewPatroulTarget", Random.Range(MinAggressivePatroulWaitTime, MaxAggressivePatroulWaitTime));
@@ -179,14 +179,14 @@ public class EnemyAI : MonoBehaviour
     // Checks if the aggression level has to be changed
     private void UpdateAgressionLevel()
     {
-        agressiveMode = GameManager.Instance.numberOfItemsPlaced >= 5;
-        if (agressiveMode && currentState == EnemyState.Patroul)
+        aggressiveMode = GameManager.Instance.numberOfItemsPlaced >= 5;
+        if (aggressiveMode && currentState == EnemyState.Patrol)
         {
-            SetState(EnemyState.AggressivePatroul);
+            SetState(EnemyState.AggressivePatrol);
         }
-        else if (!agressiveMode && currentState == EnemyState.AggressivePatroul)
+        else if (!aggressiveMode && currentState == EnemyState.AggressivePatrol)
         {
-            SetState(EnemyState.Patroul);
+            SetState(EnemyState.Patrol);
         }
     }
 
@@ -197,14 +197,14 @@ public class EnemyAI : MonoBehaviour
 
         switch (state)
         {
-            case EnemyState.Patroul:
+            case EnemyState.Patrol:
                 navAgent.speed = NormalSpeed;
                 currentMinWaitTime = MinWaitTime;
                 currentMaxWaitTime = MaxWaitTime;
                 currentMinDistance = MinPatroulDistance;
                 currentMaxDistance = MaxPatroulDistance;
                 break;
-            case EnemyState.AggressivePatroul:
+            case EnemyState.AggressivePatrol:
                 navAgent.speed = NormalSpeed;
                 currentMinWaitTime = MinAggressivePatroulWaitTime;
                 currentMaxWaitTime = MaxAggressivePatroulWaitTime;
@@ -248,7 +248,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Chase duration depends on aggressive level
 
-        if (agressiveMode)
+        if (aggressiveMode)
         {
             currentChaseDuration = AggressiveChaseDuration;
         }
@@ -263,7 +263,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Search duration depends on aggressive level
 
-        if (agressiveMode)
+        if (aggressiveMode)
         {
             currentSearchDuration = AggressiveSearchDuration;
         }
@@ -336,7 +336,7 @@ public class EnemyAI : MonoBehaviour
     public void Respawn()
     {
         transform.position = MostDistantSpawn();
-        SetState(EnemyState.Patroul);
+        SetState(EnemyState.Patrol);
 		GetComponent<ColorRandomizer>().Randomize();
         UpdateAgressionLevel();
     }
@@ -344,7 +344,7 @@ public class EnemyAI : MonoBehaviour
     // Kill the player
     private void OnTriggerEnter(Collider other)
     {
-        if (!playerHiding && other.gameObject.CompareTag("Player"))
+        if (playerDetected && other.gameObject.CompareTag("Player"))
         {
 			GameManager.Instance.GameOver();
         }
