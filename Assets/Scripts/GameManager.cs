@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 	public GameObject PickableFlashlight1;
 	public GameObject PickableFlashlight2;
 
+	public GameObject GameOverScreen;
+
 	public int numberOfItemsPlaced;
 
     FMOD.Studio.EventInstance menuEvent;
@@ -53,6 +55,14 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		Application.Quit();
+	}
+
+	public void GameOver()
+	{
+		Player.GetComponent<vp_FPInput>().enabled = false;
+		Enemy.SetActive(false);
+		GameOverScreen.SetActive(true);
+		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerDeath);
 	}
 
 	public void RestartGame()

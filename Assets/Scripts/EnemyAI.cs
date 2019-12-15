@@ -345,8 +345,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (!playerHiding && other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("You are dead now...");
-            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerDeath);
+			GameManager.Instance.GameOver();
         }
     }
 }
