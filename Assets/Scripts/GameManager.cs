@@ -12,7 +12,15 @@ public class GameManager : MonoBehaviour
 	public GameObject Player;
     public GameObject Enemy;
 
-    public int numberOfItemsPlaced;
+	public Transform Phase1Lighting;
+	public Transform Phase2Lighting;
+
+	public GameObject PickableFlashlight1;
+	public GameObject PickableFlashlight2;
+
+	public GameObject GameOverScreen;
+
+	public int numberOfItemsPlaced;
 
     FMOD.Studio.EventInstance menuEvent;
     public FMOD.Studio.EventInstance musicEvent;
