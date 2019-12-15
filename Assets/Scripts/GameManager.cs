@@ -42,11 +42,6 @@ public class GameManager : MonoBehaviour
 		Game.SetActive(true);
 		Player.SetActive(true);
         menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-        musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
-        musicEvent.start();
-        // TODO Activate Enemy in Part 1
-        ActivateEnemy();
         
 	}
 
@@ -61,6 +56,14 @@ public class GameManager : MonoBehaviour
 		Application.Quit();
 	}
 
+	public void GameOver()
+	{
+		Player.GetComponent<vp_FPInput>().enabled = false;
+		Enemy.SetActive(false);
+		GameOverScreen.SetActive(true);
+		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.playerDeath);
+	}
+
 	public void RestartGame()
 	{
 		Player.GetComponent<vp_FPInput>().MouseCursorForced = true;
@@ -69,6 +72,22 @@ public class GameManager : MonoBehaviour
 		Cursor.lockState = CursorLockMode.None;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+	}
+
+	public void StartPhase2()
+	{
+		Phase1Lighting.gameObject.SetActive(false);
+		Phase2Lighting.gameObject.SetActive(true);
+		Enemy.SetActive(true);
+		Enemy.GetComponent<EnemyAI>().Respawn();
+
+		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
+
+		if (!Player.GetComponent<Player>().HasFlashlight)
+		{
+			PickableFlashlight1.SetActive(false);
+			PickableFlashlight2.SetActive(true);
+		}
 	}
 
     public void EnemyCooldown(float cooldownTime)
@@ -82,12 +101,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         Enemy.SetActive(false);
         yield return new WaitForSeconds(cooldownTime);
-        ActivateEnemy();
-    }
-
-    private void ActivateEnemy()
-    {
-        Enemy.SetActive(true);
-        Enemy.GetComponent<EnemyAI>().Respawn();
-    }
+		Enemy.SetActive(true);
+		Enemy.GetComponent<EnemyAI>().Respawn();
+	}
 }
