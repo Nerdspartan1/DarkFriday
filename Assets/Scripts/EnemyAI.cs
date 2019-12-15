@@ -66,9 +66,12 @@ public class EnemyAI : MonoBehaviour
     private Vector3 currentOrigin;
     private Vector3 mostDistantPosition;
 
+	private Animator _anim;
+
 
     void Start()
     {
+		_anim = GetComponent<Animator>();
 		_player = GameManager.Instance.Player;
         navAgent = GetComponent<NavMeshAgent>();
         SetState(EnemyState.Patroul);
@@ -168,6 +171,7 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
 
+		_anim.SetFloat("speed", navAgent.velocity.magnitude/2);
 
     }
 
@@ -332,6 +336,7 @@ public class EnemyAI : MonoBehaviour
     {
         transform.position = MostDistantSpawn();
         SetState(EnemyState.Patroul);
+		GetComponent<ColorRandomizer>().Randomize();
         UpdateAgressionLevel();
     }
 

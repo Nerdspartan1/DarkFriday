@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+		Cursor.visible = true;
 		Game.SetActive(false);
 		Menu.SetActive(true);
 		Player.SetActive(false);
@@ -48,6 +50,16 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		Application.Quit();
+	}
+
+	public void RestartGame()
+	{
+		Player.GetComponent<vp_FPInput>().MouseCursorForced = true;
+		Player.GetComponent<vp_FPInput>().enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 	}
 
     public void EnemyCooldown(float cooldownTime)
