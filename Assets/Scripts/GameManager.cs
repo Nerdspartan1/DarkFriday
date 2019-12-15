@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
 		Game.SetActive(true);
 		Player.SetActive(true);
         menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		musicEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.music);
+		musicEvent.start();
         
 	}
 
