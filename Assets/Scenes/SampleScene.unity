@@ -327,6 +327,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1001 &11684324
 PrefabInstance:
@@ -719,6 +720,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &19866480
 GameObject:
@@ -830,6 +832,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &28245570
 GameObject:
@@ -868,6 +871,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 1
 --- !u!65 &28245572
 BoxCollider:
@@ -7260,6 +7264,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1001 &217775751
 PrefabInstance:
@@ -8749,6 +8754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 0
 --- !u!65 &258653473
 BoxCollider:
@@ -11719,6 +11725,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 1
 --- !u!65 &382733017
 BoxCollider:
@@ -13383,7 +13390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &450699941
 MonoBehaviour:
@@ -13399,16 +13406,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMov: event:/Player/Movement
   playerFS: event:/Player/Footsteps
-  playerDeath: event:/Player/Death
-  playerHide: event:/Player/Hiding
+  playerDeath: 
+  playerHide: 
   aiMov: event:/AI/Movement
   aiExpressions: event:/AI/Expressions
   mannequin: event:/Triggers/Mannequin
-  pickCloth: event:/UI/Pick Cloth
-  pickNote: event:/UI/Pick Note
-  flashlightButton: event:/UI/Flashlight Button
+  pickCloth: 
+  pickNote: 
+  flashlightButton: 
   music: event:/Soundtrack/Music
-  menu: event:/Soundtrack/Menu
+  menu: 
 --- !u!1 &455833207
 GameObject:
   m_ObjectHideFlags: 0
@@ -13663,6 +13670,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 1
 --- !u!65 &465836378
 BoxCollider:
@@ -14104,6 +14112,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ItemName: 
+  PickUpLine: pick up
 --- !u!1 &494917638
 GameObject:
   m_ObjectHideFlags: 0
@@ -15032,6 +15041,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 0
 --- !u!65 &499316898
 BoxCollider:
@@ -16959,6 +16969,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &546104812
 GameObject:
@@ -24119,6 +24130,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 3
 --- !u!65 &727339577
 BoxCollider:
@@ -24303,7 +24315,7 @@ Transform:
   m_LocalScale: {x: 0.19, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &737844453
 GameObject:
@@ -25770,7 +25782,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 155723bd3fd2b4242a033e19cc563a51,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 155723bd3fd2b4242a033e19cc563a51,
         type: 3}
@@ -27184,6 +27196,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &805537051
 GameObject:
@@ -27478,6 +27491,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &830539100
 GameObject:
@@ -28356,6 +28370,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &852792674
 GameObject:
@@ -28388,7 +28403,7 @@ Transform:
   - {fileID: 1015966223}
   - {fileID: 380778096}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &852792676
 MonoBehaviour:
@@ -29885,6 +29900,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 2
 --- !u!65 &898751156
 BoxCollider:
@@ -35439,7 +35455,7 @@ Transform:
   - {fileID: 1195742880}
   - {fileID: 1234051727}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1102773936
 GameObject:
@@ -37237,6 +37253,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1001 &1168732166
 PrefabInstance:
@@ -38627,6 +38644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 2
 --- !u!65 &1195742877
 BoxCollider:
@@ -38982,6 +39000,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1211206612
 GameObject:
@@ -39020,6 +39039,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 2
 --- !u!65 &1211206614
 BoxCollider:
@@ -39600,6 +39620,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 3
 --- !u!65 &1234051724
 BoxCollider:
@@ -40773,6 +40794,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 2
 --- !u!65 &1304498123
 BoxCollider:
@@ -42910,6 +42932,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: 
 --- !u!1001 &1429923261
 PrefabInstance:
@@ -43454,6 +43477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1442432239
 GameObject:
@@ -44378,7 +44402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477808340
 GameObject:
@@ -44417,6 +44441,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 1
 --- !u!65 &1477808342
 BoxCollider:
@@ -44601,6 +44626,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1488000598
 GameObject:
@@ -45109,6 +45135,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1524102942
 GameObject:
@@ -45147,6 +45174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 3
 --- !u!65 &1524102944
 BoxCollider:
@@ -46254,6 +46282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 0
 --- !u!65 &1556448308
 BoxCollider:
@@ -47419,6 +47448,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!1 &1598722281
 GameObject:
@@ -55073,6 +55103,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   Text: "Hey, this note is bugged. \nSorry you had to experience this.\n\n-The dev"
 --- !u!4 &1861087502 stripped
 Transform:
@@ -55172,6 +55203,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861238957}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1862199647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 636442762884155638, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_Name
+      value: MannequinMale
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.255302
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 29.738274
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507611241950411493, guid: 5bff6661d637f9d43858669ff26d641b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1862199648}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862199653, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+      propertyPath: OnEntirelyDressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bff6661d637f9d43858669ff26d641b, type: 3}
+--- !u!1 &1862199648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 636442762884155638, guid: 5bff6661d637f9d43858669ff26d641b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862199647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1863585991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56070,7 +56200,7 @@ Transform:
   - {fileID: 211316611}
   - {fileID: 349772918}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1899700034
 MonoBehaviour:
@@ -56474,6 +56604,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 3
 --- !u!65 &1932266739
 BoxCollider:
@@ -56585,6 +56716,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ItemName: 
+  PickUpLine: pick up
   ClothingType: 0
 --- !u!65 &1946024200
 BoxCollider:
@@ -62743,7 +62875,7 @@ Transform:
   - {fileID: 990046575276772365}
   - {fileID: 1633584658}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &990046575280186865
 CharacterController:

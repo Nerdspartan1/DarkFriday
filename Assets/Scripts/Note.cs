@@ -7,6 +7,11 @@ public class Note : Pickable
 	[TextArea(4,10)]
 	public string Text;
 
+	public void Start()
+	{
+		PickUpLine = "read";
+	}
+
 	public override void PickUp()
 	{
 		NoteManager.Instance.ReadNote(this);

@@ -16,15 +16,24 @@ public class Pickable : MonoBehaviour
 	[HideInInspector]
 	public string ItemName;
 
+	public string PickUpLine = "pick up";
+
     // Start is called before the first frame update
     protected virtual void Awake()
     {
 		tag = "Interactable";
 		var renderer = GetComponent<Renderer>();
-		Material = new Material(renderer.material);
-		Material.shader = Shader.Find("Outlined/Silhouetted Diffuse");
-		Material.SetColor("_OutlineColor", Color.yellow);
-		renderer.material = Material;
+		if (renderer)
+		{
+			Material = new Material(renderer.material);
+			Material.shader = Shader.Find("Outlined/Silhouetted Diffuse");
+			Material.SetColor("_OutlineColor", Color.yellow);
+			renderer.material = Material;
+		}
+		else
+		{
+			Material = null;
+		}
     }
 
 	public void Highlight()
@@ -35,11 +44,14 @@ public class Pickable : MonoBehaviour
 	// Update is called once per frame
 	protected virtual void Update()
 	{
-		Material.SetFloat("_Outline", _currentHighlightIntensity * OutlineWidth);
-		if (_currentHighlightIntensity > 0)
-			_currentHighlightIntensity -= _highlightDecaySpeed * Time.deltaTime;
-		else
-			_currentHighlightIntensity = 0f;
+		if (Material)
+		{
+			Material.SetFloat("_Outline", _currentHighlightIntensity * OutlineWidth);
+			if (_currentHighlightIntensity > 0)
+				_currentHighlightIntensity -= _highlightDecaySpeed * Time.deltaTime;
+			else
+				_currentHighlightIntensity = 0f;
+		}
 	}
 
 	public virtual void PickUp()

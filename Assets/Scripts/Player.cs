@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 	private Light _flashlight;
 
 	private Clothing _carriedClothing;
+	public Clothing CarriedClothing { get => _carriedClothing; }
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class Player : MonoBehaviour
 		{
 			var pickable = hit.collider.GetComponent<Pickable>();
 			PickUpText.gameObject.SetActive(true);
-			PickUpText.text = $"Press E to pick up {pickable.ItemName}";
+			PickUpText.text = $"Press E to {pickable.PickUpLine} {pickable.ItemName}";
 			pickable.Highlight();
 			if (Input.GetKeyDown(KeyCode.E))
 			{
@@ -104,6 +105,19 @@ public class Player : MonoBehaviour
 		clothing.gameObject.SetActive(false);
 		_carriedClothing = clothing;
 
+		UpdateCarryingText();
+
+		//sound : take clothing
+	}
+
+	public void RemoveClothingFromInventory()
+	{
+		_carriedClothing = null;
+		UpdateCarryingText();
+	}
+
+	public void UpdateCarryingText()
+	{
 		if (_carriedClothing)
 		{
 			CarriedClothingText.text = _carriedClothing.ItemName;
@@ -115,7 +129,6 @@ public class Player : MonoBehaviour
 			CarriedClothingText.text = "nothing";
 			CarriedClothingText.color = Color.white;
 		}
-		//sound : take clothing
 	}
 
 	public void ToggleFlashlight()
