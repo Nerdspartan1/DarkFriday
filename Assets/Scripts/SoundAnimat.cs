@@ -7,7 +7,7 @@ public class SoundAnimat : MonoBehaviour
     public static SoundAnimat sap;
     // Start is called before the first frame update
 
-    void PlayAiMov()
+    public void PlayAiMov()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiMov, this.gameObject);
     }
