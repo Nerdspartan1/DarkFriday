@@ -16,8 +16,8 @@ TagManager:
   - 
   - PostProcessing
   - PlayerModel
-  - 
-  - 
+  - InteractablePhase1
+  - InteractablePhase2
   - 
   - 
   - 

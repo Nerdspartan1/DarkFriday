@@ -21,7 +21,6 @@ public class Pickable : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Awake()
     {
-		tag = "Interactable";
 		var renderer = GetComponent<Renderer>();
 		if (renderer)
 		{

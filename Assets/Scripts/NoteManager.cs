@@ -14,6 +14,8 @@ public class NoteManager : MonoBehaviour
 	public Transform Notes;
 	public Note SeasonNote;
 
+	private Note _noteBeingRead = null;
+
 	private void Awake()
 	{
 		Instance = this;
@@ -50,11 +52,18 @@ public class NoteManager : MonoBehaviour
 	{
 		NoteReader.SetActive(true);
 		NoteText.text = note.Text;
+		_noteBeingRead = note;
 	}
 
 	public void StopReadingNote()
 	{
 		NoteReader.SetActive(false);
+		if (_noteBeingRead)
+		{
+			_noteBeingRead.StopReading();
+			_noteBeingRead = null;
+		}
+
 	}
 
 }

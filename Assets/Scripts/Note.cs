@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Note : Pickable
 {
 	[TextArea(4,10)]
 	public string Text;
+
+	public UnityEvent OnStopReading;
 
 	public void Start()
 	{
@@ -15,6 +18,11 @@ public class Note : Pickable
 	public override void PickUp()
 	{
 		NoteManager.Instance.ReadNote(this);
+	}
+
+	public void StopReading()
+	{
+		OnStopReading.Invoke();
 	}
 
 	public void SetClothingType(ClothingType clothingType)
