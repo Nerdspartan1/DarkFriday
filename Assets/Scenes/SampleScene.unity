@@ -13399,11 +13399,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMov: event:/Player/Movement
   playerFS: event:/Player/Footsteps
+  playerDeath: event:/Player/Death
+  playerHide: event:/Player/Hiding
   aiMov: event:/AI/Movement
   aiExpressions: event:/AI/Expressions
-  mannequin: 
+  mannequin: event:/Triggers/Mannequin
+  pickCloth: event:/UI/Pick Cloth
+  pickNote: event:/UI/Pick Note
+  flashlightButton: event:/UI/Flashlight Button
   music: event:/Soundtrack/Music
-  intro: event:/Soundtrack/Intro
+  menu: event:/Soundtrack/Menu
 --- !u!1 &455833207
 GameObject:
   m_ObjectHideFlags: 0
