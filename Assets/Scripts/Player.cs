@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 	public Text PickUpText;
 	public GameObject FlashlightObject;
 	public Text CarriedClothingText;
+	private vp_Controller _fpsController;
+	private vp_FPInput _fpsInput;
 	private CharacterController _controller;
 	private vp_PlayerInventory _inventory;
 
@@ -32,6 +34,8 @@ public class Player : MonoBehaviour
 		FPSCamera = GetComponentInChildren<Camera>();
 		PickUpText.gameObject.SetActive(false);
 		_controller = GetComponent<CharacterController>();
+		_fpsController = GetComponent<vp_Controller>();
+		_fpsInput = GetComponent<vp_FPInput>();
 		_inventory = GetComponent<vp_PlayerInventory>();
 		_flashlight = FlashlightObject.GetComponentInChildren<Light>();
 		_flashlight.enabled = false;
@@ -69,6 +73,16 @@ public class Player : MonoBehaviour
 		{
 			Debug.Log("Player not moving");
 		}*/
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			_fpsController.SetState("Freeze", true);
+			_fpsInput.SetState("Freeze", true);
+		}
+		else if (Input.GetKeyUp(KeyCode.Space))
+		{
+			_fpsController.SetState("Freeze", false);
+			_fpsInput.SetState("Freeze", false);
+		}
 
 		var speed = _controller.velocity.magnitude;
 		if (speed < MinFootstepSpeed)
