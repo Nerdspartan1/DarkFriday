@@ -68,8 +68,7 @@ public class EnemyAI : MonoBehaviour
     private Vector3 mostDistantPosition;
 
 	private Animator _anim;
-
-
+    
     void Start()
     {
 		_anim = GetComponent<Animator>();
@@ -93,6 +92,7 @@ public class EnemyAI : MonoBehaviour
                 if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
                 break;
             case EnemyState.Cooldown:
@@ -101,6 +101,7 @@ public class EnemyAI : MonoBehaviour
                 if (playerDetected && !playerHiding)
                 {
                     SetState(EnemyState.Chase);
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
                 else
                 {
@@ -118,6 +119,7 @@ public class EnemyAI : MonoBehaviour
                 if (playerDetected)
                 {
                     ResetChaseDuration();
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
                 else
                 {
@@ -140,6 +142,7 @@ public class EnemyAI : MonoBehaviour
                 {
                     currentOrigin = transform.position;
                     StartCoroutine("SetNewPatroulTarget", Random.Range(MinWaitTime, MaxWaitTime));
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
                 break;
             case EnemyState.Cooldown:
@@ -155,6 +158,7 @@ public class EnemyAI : MonoBehaviour
                 if (DoMovement())
                 {
                     StartCoroutine("SetNewPatroulTarget", Random.Range(MinSearchWaitTime, MaxSearchWaitTime));
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
                 break;
             case EnemyState.Chase:
@@ -163,6 +167,7 @@ public class EnemyAI : MonoBehaviour
                 if (currentChaseDelay > 0)
                 {
                     currentChaseDelay -= Time.deltaTime;
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
                 }
 
                 if (DoMovement() && currentChaseDelay <= 0)
@@ -339,6 +344,7 @@ public class EnemyAI : MonoBehaviour
         SetState(EnemyState.Patroul);
 		GetComponent<ColorRandomizer>().Randomize();
         UpdateAgressionLevel();
+        FMODUnity.RuntimeManager.PlayOneShotAttached(SoundManager.sm.aiExpressions, this.gameObject);
     }
 
     // Kill the player

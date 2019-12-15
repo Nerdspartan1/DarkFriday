@@ -19,6 +19,7 @@ public class Note : Pickable
 	{
 		NoteManager.Instance.ReadNote(this);
 		base.PickUp();
+		FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sm.pickNote);
 	}
 
 	public void StopReading()

@@ -55,12 +55,6 @@ public class GameManager : MonoBehaviour
         
 	}
 
-    void Update()
-    {
-        //musicEvent.setParameterByName("Items", numberOfItemsPlaced);
-        //Debug.Log(numberOfItemsPlaced);
-    }
-
 	public void QuitGame()
 	{
 		Application.Quit();
@@ -83,6 +77,7 @@ public class GameManager : MonoBehaviour
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
 	}
 

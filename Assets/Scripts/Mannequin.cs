@@ -50,11 +50,12 @@ public class Mannequin : Pickable
 				}
 				else
 				{
-					//wrong color
+					FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Wrong Cloth");
 				}
 			}
 			else
 			{
+				FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Wrong Cloth");
 				//already has this clothing type
 			}
 
@@ -68,7 +69,7 @@ public class Mannequin : Pickable
 		Renderers[(int)clothing.ClothingType].gameObject.SetActive(true);
 
 		GameManager.Instance.numberOfItemsPlaced++;
-		//dynamically change music
+		GameManager.Instance.musicEvent.setParameterByName("Items", GameManager.Instance.numberOfItemsPlaced);
 
 		bool fullyDressed = true;
 		foreach (bool b in _hasClothing)
