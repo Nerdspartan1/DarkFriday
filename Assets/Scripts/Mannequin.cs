@@ -68,6 +68,7 @@ public class Mannequin : Pickable
 		Renderers[(int)clothing.ClothingType].gameObject.SetActive(true);
 
 		GameManager.Instance.numberOfItemsPlaced++;
+		//dynamically change music
 
 		bool fullyDressed = true;
 		foreach (bool b in _hasClothing)

@@ -25,7 +25,7 @@ public class Clothing : Pickable
 
 	public void UpdateName()
 	{
-		ItemName = ColorManager.ColorName(Material.color) + " " + ClothingName(ClothingType);
+		ItemName = ColorManager.Instance.ColorName(Material.color) + " " + ClothingName(ClothingType);
 	}
 
 	public override void PickUp()

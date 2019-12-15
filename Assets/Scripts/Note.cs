@@ -56,10 +56,10 @@ public class Note : Pickable
 				break;
 		}
 
-		Text += $"Winter : {ColorManager.ColorName(colors[Season.Winter])}\n" +
-					$"Spring : {ColorManager.ColorName(colors[Season.Spring])}\n" +
-					$"Summer : {ColorManager.ColorName(colors[Season.Summer])}\n" +
-					$"Autumn : {ColorManager.ColorName(colors[Season.Autumn])}\n";
+		Text += $"Winter : {ColorManager.Instance.ColorName(colors[Season.Winter])}\n" +
+					$"Spring : {ColorManager.Instance.ColorName(colors[Season.Spring])}\n" +
+					$"Summer : {ColorManager.Instance.ColorName(colors[Season.Summer])}\n" +
+					$"Autumn : {ColorManager.Instance.ColorName(colors[Season.Autumn])}\n";
 
 	}
 
