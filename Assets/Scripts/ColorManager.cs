@@ -97,23 +97,23 @@ public class ColorManager : MonoBehaviour
 		}
 	}
 
-	public static string ColorName(Color color)
+	public string ColorName(Color color)
 	{
-		if (color == Color.red)
+		if (color == SummerColors[0])
 			return "red";
-		else if (color == Color.blue)
-			return "blue";
-		else if (color == Color.green)
-			return "green";
-		else if (color == new Color(1,1,0)) //yellow
-			return "yellow";
-		else if (color == Color.magenta)
-			return "magenta";
-		else if (color == Color.cyan)
+		else if (color == SummerColors[1])
 			return "cyan";
-		else if (color == Color.black)
+		else if (color == SpringColors[0])
+			return "green";
+		else if (color == SpringColors[1]) //yellow
+			return "yellow";
+		else if (color == AutumnColors[0])
+			return "magenta";
+		else if (color == AutumnColors[1])
+			return "blue";
+		else if (color == WinterColors[0])
 			return "black";
-		else if (color == Color.white)
+		else if (color == WinterColors[1])
 			return "white";
 		else
 			return "";
