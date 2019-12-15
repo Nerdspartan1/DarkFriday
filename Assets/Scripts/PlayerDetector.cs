@@ -16,11 +16,15 @@ public class PlayerDetector : MonoBehaviour
 
     private Vector3 lastMousePos;
     private Vector3 lastPlayerPos;
+
+    FMOD.Studio.EventInstance hiddenEvent;
     
     void Start()
     {
         lastPlayerPos = GameManager.Instance.Player.transform.position;
         lastMousePos = Input.mousePosition;
+
+        hiddenEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.playerHide);
     }
 
     void FixedUpdate()
@@ -43,6 +47,30 @@ public class PlayerDetector : MonoBehaviour
             EnemyAI.playerDetected = playerInRange && PlayerInLineOfSight();
         }
         EnemyAI.playerHiding = !mouseMoved && !playerMoved && hiding && !EnemyAI.playerDetected;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            hiddenEvent.setParameterByName("Hiding", 1);
+            hiddenEvent.start();
+        }
+        else if (Input.GetKeyUp("space"))
+        {
+            hiddenEvent.setParameterByName("Hiding", 0);
+        }
+    }
+    public void PlayerHiddenSound()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("Hide and breath");
+        }
+        else if (Input.GetKeyUp("space"))
+        {
+            Debug.Log("not hidden");
+        }
     }
 
     private void OnTriggerEnter(Collider other)

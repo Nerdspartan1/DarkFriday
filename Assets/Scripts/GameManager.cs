@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int numberOfItemsPlaced;
 
+    FMOD.Studio.EventInstance menuEvent;
+
 	public void Awake()
 	{
 		Instance = this;
@@ -24,6 +26,11 @@ public class GameManager : MonoBehaviour
 		Menu.SetActive(true);
 		Player.SetActive(false);
         Enemy.SetActive(false);
+
+        menuEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.menu);
+        menuEvent.start();
+        
+
     }
 
 	public void StartGame()
@@ -31,6 +38,7 @@ public class GameManager : MonoBehaviour
 		Menu.SetActive(false);
 		Game.SetActive(true);
 		Player.SetActive(true);
+        menuEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         // TODO Activate Enemy in Part 1
         ActivateEnemy();
