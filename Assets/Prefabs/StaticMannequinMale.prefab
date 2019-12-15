@@ -198,7 +198,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1517719592233303936, guid: 787c21f30e5dbe34c9d59681622e68a9, type: 3}
+  - {fileID: 2100000, guid: 5ee7cd65137d06446bdc5de9b7f8b1b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1511,7 +1511,7 @@ GameObject:
   - component: {fileID: 7876545248826789528}
   - component: {fileID: 830964491688645644}
   m_Layer: 0
-  m_Name: MannequinMale (1)
+  m_Name: StaticMannequinMale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,7 +1922,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1517719592233303936, guid: 787c21f30e5dbe34c9d59681622e68a9, type: 3}
+  - {fileID: 2100000, guid: 5ee7cd65137d06446bdc5de9b7f8b1b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
