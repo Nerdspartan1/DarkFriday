@@ -82,6 +82,8 @@ public class GameManager : MonoBehaviour
 		Enemy.SetActive(true);
 		Enemy.GetComponent<EnemyAI>().Respawn();
 
+		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
+
 		if (!Player.GetComponent<Player>().HasFlashlight)
 		{
 			PickableFlashlight1.SetActive(false);
