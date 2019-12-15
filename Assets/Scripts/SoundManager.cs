@@ -11,6 +11,10 @@ public class SoundManager : MonoBehaviour
     public string playerMov;
     [FMODUnity.EventRef]
     public string playerFS;
+    [FMODUnity.EventRef]
+    public string playerDeath;
+    [FMODUnity.EventRef]
+    public string playerHide;
 
     [Header("AI")]
     [FMODUnity.EventRef]
@@ -22,11 +26,19 @@ public class SoundManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string mannequin;
 
+    [Header("UI")]
+    [FMODUnity.EventRef]
+    public string pickCloth;
+    [FMODUnity.EventRef]
+    public string pickNote;
+    [FMODUnity.EventRef]
+    public string flashlightButton;
+
     [Header("Soundtrack")]
     [FMODUnity.EventRef]
     public string music;
     [FMODUnity.EventRef]
-    public string intro;
+    public string menu;
 
 
     void Awake()
