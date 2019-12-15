@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MirrorMaterial
+  m_Name: MirrorMaterial 2
   m_Shader: {fileID: 4800000, guid: 40d15e5c85c60164f876227a131fdb3b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
