@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
 	public GameObject GameOverScreen;
 
+	public Transform Mirrors;
+	public Material DarkMirrorMaterial;
+
 	public int numberOfItemsPlaced;
 
     FMOD.Studio.EventInstance menuEvent;
@@ -93,6 +96,10 @@ public class GameManager : MonoBehaviour
 		Phase2Lighting.gameObject.SetActive(true);
 		Enemy.SetActive(true);
 		
+		foreach(var mirrorRenderer in Mirrors.GetComponentsInChildren<Renderer>())
+		{
+			mirrorRenderer.material = DarkMirrorMaterial;
+		}
 
 		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
 
