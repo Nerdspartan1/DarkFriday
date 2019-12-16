@@ -12866,7 +12866,7 @@ PrefabInstance:
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.73
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
@@ -31633,7 +31633,7 @@ PrefabInstance:
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.73
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
@@ -39360,7 +39360,7 @@ PrefabInstance:
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.73
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7861017967235296654, guid: 1ca850d8a8760604caa798cef9a663c6,
         type: 3}
@@ -86090,8 +86090,8 @@ MonoBehaviour:
   FlashlightObject: {fileID: 613844777}
   CarriedClothingText: {fileID: 290933742}
   MaxInteractDistance: 2
-  MinFootstepSpeed: 2
-  FootstepsFrequencyFactor: 0
+  MinFootstepSpeed: 1
+  FootstepsFrequencyFactor: 1
   HasFlashlight: 0
   InteractableMask:
     serializedVersion: 2
