@@ -24,6 +24,9 @@ public class ColorManager : MonoBehaviour
 
 	public int MinimumAmountOfCorrectClothes = 1;
 
+	[Range(0f,1f)]
+	public float AdditionalCorrectColorSpawnChanceMultiplicator = 0.33f;
+
 	public Dictionary<ClothingType, Color> CorrectColor = new Dictionary<ClothingType, Color>();
 
 	public Dictionary<ClothingType, int> AmountOfCorrectClothings = new Dictionary<ClothingType, int>(){
@@ -92,7 +95,14 @@ public class ColorManager : MonoBehaviour
 			}
 			else
 			{
-				clothing.Color = GetRandomColor();
+				Color color;
+				do
+				{
+					color = GetRandomColor();
+				}
+				while (color == CorrectColor[clothing.ClothingType] && Random.value > AdditionalCorrectColorSpawnChanceMultiplicator);
+
+				clothing.Color = color;
 			}
 		}
 	}
@@ -105,7 +115,7 @@ public class ColorManager : MonoBehaviour
 			return "cyan";
 		else if (color == SpringColors[0])
 			return "green";
-		else if (color == SpringColors[1]) //yellow
+		else if (color == SpringColors[1])
 			return "yellow";
 		else if (color == AutumnColors[0])
 			return "magenta";
