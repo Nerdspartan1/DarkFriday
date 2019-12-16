@@ -77,8 +77,9 @@ public class GameManager : MonoBehaviour
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-
+		musicEvent.setParameterByName("TRX Part 2", 0f);
+		musicEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		musicEvent.release();
 	}
 
 	public void TransitiontoPhase2()
