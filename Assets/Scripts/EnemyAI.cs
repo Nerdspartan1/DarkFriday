@@ -76,7 +76,8 @@ public class EnemyAI : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         SetState(EnemyState.Patroul);
         transform.position = MostDistantSpawn();
-    }
+		Respawn();
+	}
 
     // Update is called once per frame
     void Update()

@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shoes_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 5459706414237618366, guid: 5c2b419a075586d48b0ef59cb0ed583d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9052129519541478061, guid: 5c2b419a075586d48b0ef59cb0ed583d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,4 +79,5 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9f7d027cee5da4c4ca25101a5065891a, type: 2}
     m_RemovedComponents:
     - {fileID: 5224046528569170170, guid: 5c2b419a075586d48b0ef59cb0ed583d, type: 3}
+    - {fileID: 2747840481381985267, guid: 5c2b419a075586d48b0ef59cb0ed583d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c2b419a075586d48b0ef59cb0ed583d, type: 3}

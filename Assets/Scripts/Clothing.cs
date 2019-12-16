@@ -33,7 +33,6 @@ public class Clothing : Pickable
 		GameManager.Instance.Player.GetComponent<Player>().TakeClothing(this);
 
 		base.PickUp();
-		Debug.Log("picked up");
 	}
 
 	public static string ClothingName(ClothingType type)

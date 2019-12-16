@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4428680287882969293, guid: 97488848e1750b74bbc07c68c6361122,
         type: 3}
       propertyPath: m_Name
-      value: SuitJacket_Hanging
+      value: SuitJacket_Hanging_Static
       objectReference: {fileID: 0}
     - target: {fileID: 805735972516721374, guid: 97488848e1750b74bbc07c68c6361122,
         type: 3}
@@ -67,6 +67,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2686682283067847697, guid: 97488848e1750b74bbc07c68c6361122,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c148f0e401290a408a9982faa3def41, type: 2}
+    - target: {fileID: 1751040960016499818, guid: 97488848e1750b74bbc07c68c6361122,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296310031120164598, guid: 97488848e1750b74bbc07c68c6361122,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c148f0e401290a408a9982faa3def41, type: 2}
     m_RemovedComponents:
     - {fileID: 4032155435397495659, guid: 97488848e1750b74bbc07c68c6361122, type: 3}
+    - {fileID: 4203639726776973109, guid: 97488848e1750b74bbc07c68c6361122, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97488848e1750b74bbc07c68c6361122, type: 3}

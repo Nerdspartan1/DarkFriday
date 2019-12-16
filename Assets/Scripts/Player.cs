@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+		if (Input.GetKeyDown(KeyCode.Escape)) GameManager.Instance.RestartGame();
+
 		Ray ray = new Ray(FPSCamera.transform.position, FPSCamera.transform.forward);
 
 		if (NoteManager.Instance.NoteReader.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) NoteManager.Instance.StopReadingNote();

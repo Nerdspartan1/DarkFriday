@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pants_Folded_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 1090467336580885475, guid: 69f751c80e4e13d4585c108bcecbc14a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4141420064253876720, guid: 69f751c80e4e13d4585c108bcecbc14a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,4 +79,5 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a3aa1b605de8f7d43b9828886e2129f7, type: 2}
     m_RemovedComponents:
     - {fileID: 5722648459516975442, guid: 69f751c80e4e13d4585c108bcecbc14a, type: 3}
+    - {fileID: 2636208225837853532, guid: 69f751c80e4e13d4585c108bcecbc14a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69f751c80e4e13d4585c108bcecbc14a, type: 3}

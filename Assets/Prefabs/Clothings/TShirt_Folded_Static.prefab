@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TShirt_Folded_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 8036141686510963051, guid: cfb93ee49f5644845b32d4d86bd535ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6475408331298519928, guid: cfb93ee49f5644845b32d4d86bd535ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,4 +79,5 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d7ca9372fb01816448dbc0f0eaabf45d, type: 2}
     m_RemovedComponents:
     - {fileID: 2148808482681073004, guid: cfb93ee49f5644845b32d4d86bd535ab, type: 3}
+    - {fileID: 2717494455427022923, guid: cfb93ee49f5644845b32d4d86bd535ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cfb93ee49f5644845b32d4d86bd535ab, type: 3}

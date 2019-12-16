@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 		Phase1Lighting.gameObject.SetActive(false);
 		Phase2Lighting.gameObject.SetActive(true);
 		Enemy.SetActive(true);
-		Enemy.GetComponent<EnemyAI>().Respawn();
+		
 
 		Player.GetComponent<Player>().InteractableMask |= (1 << LayerMask.NameToLayer("InteractablePhase2"));
 
