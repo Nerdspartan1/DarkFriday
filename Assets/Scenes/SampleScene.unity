@@ -28441,13 +28441,13 @@ MonoBehaviour:
         m_CallState: 2
   ItemName: 
   PickUpLine: pick up
-  Text: 'Tommy, before you hop away for the weekend, I need you to dress Manel, the
-    mannequin that we keep in the storage room. I know he''s not supposed to be exhibited,
-    but he gets really sad when he is not dressed like his brothers and sisters.
-
-    Go find that note I wrote you last week, it explains how you should dress him.
-    It should be near the checkout registers. By the way, you should try to press
-    Space Bar to pose as a mannequin if you find anything weird coming to you.'
+  Text: "Tommy, before you hop away for the weekend, I need you to dress Manel, the
+    mannequin that we keep in the storage room. I know he's not supposed to be exhibited,
+    but he gets really sad when he is not dressed like his brothers and sisters.\nGo
+    find that note I wrote you last week, it explains how you should dress him. It
+    should be near the checkout registers. \nOne last thing, if the lights go out
+    for any reason and you see something moving in the store, try to hold SPACE BAR
+    to stay still and hold your breath, it should keep you hidden."
   OnStopReading:
     m_PersistentCalls:
       m_Calls:
