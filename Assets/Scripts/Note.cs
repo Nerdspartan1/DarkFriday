@@ -77,11 +77,11 @@ public class Note : Pickable
 		Text = "Note for Tommy : today you need to dress the mannequins " +
 			$"accordingly to the {seasonString} season. There is a very " +
 			$"specific and precise color pattern that you have to respect when " +
-			$"dressing the mannequins. They and I will get very angry " +
+			$"dressing the mannequins. Boss will get very angry " +
 			$"if you mess up the colors, alright ?\n" +
 			$"There are some notes lying around explaining the color scheme " +
 			$"that you have to follow for EACH clothing article : top, pants, shoes and jacket.\n" +
-			$"Just look around a bit to find them and PLEASE DON'T MESS UP LIKE USUAL";
+			$"Just look around to find them and PLEASE DON'T MESS UP LIKE USUAL";
 	}
 }
 

@@ -20,7 +20,13 @@ public class SoundManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string aiMov;
     [FMODUnity.EventRef]
-    public string aiExpressions;
+    public string aiExpChase;
+    [FMODUnity.EventRef]
+    public string aiExpDetected;
+    [FMODUnity.EventRef]
+    public string aiExpPatrol;
+    [FMODUnity.EventRef]
+    public string aiExpSearch;
 
     [Header("Triggers")]
     [FMODUnity.EventRef]
