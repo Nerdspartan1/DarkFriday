@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 	private Clothing _carriedClothing;
 	public Clothing CarriedClothing { get => _carriedClothing; }
 
-	FMOD.Studio.EventInstance hiddenEvent;
+	
 
 	void Start()
     {
@@ -43,8 +43,6 @@ public class Player : MonoBehaviour
 		_inventory = GetComponent<vp_PlayerInventory>();
 		_flashlight = FlashlightObject.GetComponentInChildren<Light>();
 		_flashlight.enabled = false;
-
-		hiddenEvent = FMODUnity.RuntimeManager.CreateInstance(SoundManager.sm.playerHide);
 	}
 
     void Update()
@@ -82,20 +80,6 @@ public class Player : MonoBehaviour
 			Debug.Log("Player not moving");
 		}*/
 
-		//GLOBAL PARAMETER HIDING TRIGGER
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			_fpsController.SetState("Freeze", true);
-			_fpsInput.SetState("Freeze", true);
-			FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Hiding", 1f);
-			hiddenEvent.start();
-		}
-		else if (Input.GetKeyUp(KeyCode.Space))
-		{
-			_fpsController.SetState("Freeze", false);
-			_fpsInput.SetState("Freeze", false);
-			FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Hiding", 0f);
-		}
 
 		var speed = _controller.velocity.magnitude;
 		if (speed < MinFootstepSpeed)
