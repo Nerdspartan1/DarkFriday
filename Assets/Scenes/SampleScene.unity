@@ -17168,48 +17168,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216480313762345448, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 216480313762345448, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.150772
+      value: -11.56
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.042
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.789429
+      value: -6.22
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.2869129
+      value: 0.44271034
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.64628255
+      value: -0.5513689
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.64628243
+      value: -0.55136883
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2869129
+      value: -0.44271016
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
@@ -17229,53 +17224,13 @@ PrefabInstance:
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -132.123
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596084777453704695, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_Range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596084777453704695, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596084777453704695, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
+      value: -257.524
       objectReference: {fileID: 0}
     - target: {fileID: 7862225683191297951, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
       propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 990046575276413324}
-    - target: {fileID: 7862225683191297951, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GiveFlashlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 7862225683191297951, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 410659353}
-    - target: {fileID: 7862225683191297951, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596084777453704693, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596084778330673693, guid: 29c2312343909bf4abdf4caff81641e7,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29c2312343909bf4abdf4caff81641e7, type: 3}
 --- !u!4 &410659352 stripped
@@ -28446,8 +28401,8 @@ MonoBehaviour:
     but he gets really sad when he is not dressed like his brothers and sisters.\nGo
     find that note I wrote you last week, it explains how you should dress him. It
     should be near the checkout registers. \nOne last thing, if the lights go out
-    for any reason and you see something moving in the store, try to hold SPACE BAR
-    to stay still and hold your breath, it should keep you hidden."
+    for any reason and you see something moving in the store, just run using SHIFT
+    or hold SPACE BAR to stay still and hold your breath, it should keep you hidden."
   OnStopReading:
     m_PersistentCalls:
       m_Calls:
@@ -99491,6 +99446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 216480313762345448, guid: 29c2312343909bf4abdf4caff81641e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3844471449712428027, guid: 29c2312343909bf4abdf4caff81641e7,
         type: 3}
