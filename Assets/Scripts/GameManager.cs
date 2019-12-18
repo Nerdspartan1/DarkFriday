@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour
 
 	public int numberOfItemsPlaced;
 
-	public Transform Phase1SFXTriggers;
-	public Transform Phase2SFXTriggers;
+	public Transform SFXTriggers;
 
     FMOD.Studio.EventInstance menuEvent;
     public FMOD.Studio.EventInstance musicEvent;
@@ -98,8 +97,7 @@ public class GameManager : MonoBehaviour
 		Phase1Lighting.gameObject.SetActive(false);
 		Phase2Lighting.gameObject.SetActive(true);
 
-		Phase1SFXTriggers.gameObject.SetActive(false);
-		Phase2SFXTriggers.gameObject.SetActive(true);
+		SFXTriggers.gameObject.SetActive(true);
 		Enemy.SetActive(true);
 		
 		foreach(var mirrorRenderer in Mirrors.GetComponentsInChildren<Renderer>())
