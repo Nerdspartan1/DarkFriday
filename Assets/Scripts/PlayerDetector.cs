@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
+	private Stamina PlayerStamina;
     public EnemyAI EnemyAI;
     public KeyCode hidingKey;
     public GameObject EnemyEyes;
@@ -25,6 +26,7 @@ public class PlayerDetector : MonoBehaviour
 
     void Start()
     {
+		PlayerStamina = GameManager.Instance.Player.GetComponent<Stamina>();
         lastPlayerPos = GameManager.Instance.Player.transform.position;
         lastMousePos = Input.mousePosition;
     }
@@ -37,7 +39,7 @@ public class PlayerDetector : MonoBehaviour
         playerMoved = GameManager.Instance.Player.transform.position != lastPlayerPos;
         lastPlayerPos = GameManager.Instance.Player.transform.position;
 
-        hiding = Input.GetKey(hidingKey);
+        hiding = PlayerStamina.IsHiding;
 
         // Check if hiding is possible
 

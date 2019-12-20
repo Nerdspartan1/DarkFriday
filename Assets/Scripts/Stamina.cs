@@ -29,7 +29,7 @@ public class Stamina : MonoBehaviour
 	private float _resumeRenegerationTime = 0f;
 
 	private bool _isRunning = false;
-	private bool _isHiding = false;
+	public bool IsHiding = false;
 
 	FMOD.Studio.EventInstance hiddenEvent;
 
@@ -69,7 +69,7 @@ public class Stamina : MonoBehaviour
 
 	public void StartHiding()
 	{
-		_isHiding = true;
+		IsHiding = true;
 		_fpsController.SetState("Freeze", true);
 		_fpsInput.SetState("Freeze", true);
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Hiding", 1f);
@@ -78,7 +78,7 @@ public class Stamina : MonoBehaviour
 
 	public void StopHiding()
 	{
-		_isHiding = false;
+		IsHiding = false;
 		_fpsController.SetState("Freeze", false);
 		_fpsInput.SetState("Freeze", false);
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Hiding", 0f);
@@ -97,7 +97,7 @@ public class Stamina : MonoBehaviour
 		else if (Input.GetKeyUp(KeyCode.Space))
 			StopHiding();
 
-		if (_isHiding)
+		if (IsHiding)
 		{
 			CurrentStamina -= HideDepletionRate * Time.deltaTime;
 			if (CurrentStamina < 0f)
