@@ -49,6 +49,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+
+			musicEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		}
+	}
 	public void StartGame()
 	{
 		Menu.SetActive(false);

@@ -1234,6 +1234,8 @@ MonoBehaviour:
   hidingKey: 32
   EnemyEyes: {fileID: 942156083523764857}
   PlayerEyes: {fileID: 0}
+  UndetectDelay: 1.5
+  currentUndetectDelay: 0
 --- !u!1 &1726301159735745890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,22 +2982,22 @@ MonoBehaviour:
   MaxPatroulDistance: 30
   MinWaitTime: 1
   MaxWaitTime: 5
-  ChaseDuration: 10
-  MinAggressivePatroulDistance: 10
+  ChaseDuration: 6
+  MinAggressivePatroulDistance: 8
   MaxAggressivePatroulDistance: 35
   MinAggressivePatroulWaitTime: 1
   MaxAggressivePatroulWaitTime: 3
-  AggressiveChaseDuration: 15
+  AggressiveChaseDuration: 9
   MinSearchDistance: 4
   MaxSearchDistance: 8
   MinSearchWaitTime: 0
   MaxSearchWaitTime: 1
-  SearchDuration: 10
-  AggressiveSearchDuration: 15
-  ChaseDelay: 1.5
+  SearchDuration: 3
+  AggressiveSearchDuration: 6
+  ChaseDelay: 2
   CoolDownDuration: 10
-  NormalSpeed: 3.5
-  ChaseSpeed: 6
+  NormalSpeed: 3
+  ChaseSpeed: 6.5
   playerDetected: 0
   playerHiding: 0
   currentState: 0
